@@ -4,22 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "bootstrap/dist/css/bootstrap.min.css";
-import "Components/Novo/Novoform";
+//import "Components/Novo/Novoform";
 import Novoform from './Components/Novo/Novoform';
 import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  
-  <BrowserRouter>
-    <div>
-      <switch>
-        <route path="/Novoform" component={Novoform} />
-      </switch>
-    </div>
-  </BrowserRouter>
-      
-  
+root.render
+(
+  <React.StrictMode>
+    <div className = "MainDiv">
+        <div className = "Form"> 
+          <Novoform/>
+        </div>
+    </div> 
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
