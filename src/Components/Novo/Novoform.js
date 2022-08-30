@@ -1,6 +1,17 @@
 const Novoform =() =>{
     return(
         <form>
+          <img 
+          src= "/novo-logo.png" 
+          alt="Logo de NovoSpace" 
+          
+          //padding="200"
+          />
+          <div id="Titulo" className="Tituloform">
+            <h1>
+              LOG IN
+            </h1>
+          </div>
   <div className="mb-3">
     <label for="exampleInputEmail1" className="form-label">User</label>
     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
