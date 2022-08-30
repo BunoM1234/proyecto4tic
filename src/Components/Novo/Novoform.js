@@ -1,11 +1,12 @@
+import Img from './novo-logo.png'
+
 const Novoform =() =>{
     return(
         <form>
           <img 
-          src= "/novo-logo.png" 
-          alt="Logo de NovoSpace" 
+          src= {Img} 
+          alt="Logo de NovoSpace"
           
-          //padding="200"
           />
           <div id="Titulo" className="Tituloform">
             <h1>
