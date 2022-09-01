@@ -1,6 +1,37 @@
-body {
-  margin: 0;
-  padding: 100px;
-  width: 500px;
-  font-family: sans-serif;
+ 
+body 
+{
+  font-family: sans-serif
 }
+.Imagen1
+{
+   float: right;
+}
+
+.Form1
+{
+  margin: 0;
+  padding: 160px;
+  width: 900px;
+}
+
+.Tituloform
+{
+  font-family: "Tahoma Black"
+
+}
+
+/*.form-label
+{
+  font-family: "Arial"
+}
+
+.form-label1
+{
+  font-family: "Arial"
+}
+*/
+
+
+
+
