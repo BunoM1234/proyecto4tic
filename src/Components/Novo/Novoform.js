@@ -4,6 +4,7 @@ import Img1 from './Virtual reality-cuate.png'
 const Novoform =() =>{
     return(
       <div>
+      
     <div allign="right">
         <img className = "Imagen1"
           src= {Img1}
@@ -13,6 +14,9 @@ const Novoform =() =>{
         />
     </div>
         <form className = "Form1">
+          <button type="link" className="shortcut" id="shortcut">
+            Ir a la frontpage
+          </button>
           <div id="Titulo" className="Tituloform">
             <h1>
               LOG IN
