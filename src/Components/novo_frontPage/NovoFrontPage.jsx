@@ -2,11 +2,11 @@ import React from 'react'
 
 const NovoFrontPage =() =>{
     return(
-        <div>
-            <select>
+        //<div>
+          //  <select>
 
-            </select>
-        </div>
+            //</select>
+        //</div>
         
 
 

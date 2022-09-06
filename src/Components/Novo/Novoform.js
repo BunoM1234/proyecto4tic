@@ -1,24 +1,36 @@
 import Img from './Astronaut suit-rafiki.png'
 import Img1 from './Virtual reality-cuate.png'
+import Img2 from './novo-logo.png'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from 'react-router-dom';
 
 const Novoform =() =>{
     return(
-      <div>
-      
+  <div>
+    <div className="DarkBar" id="DarkBar">  
+    <img className = "Imagen2"
+          src= {Img2}
+          alt="Imagen"
+        /> 
+    </div> 
+        
     <div allign="right">
         <img className = "Imagen1"
           src= {Img1}
           alt="Imagen"
-          width= "700"
-          height= "700"
+          width= "650"
+          height= "650"
         />
+                 
     </div>
         <form className = "Form1">
-          <button type="link" className="shortcut" id="shortcut">
-            Ir a la frontpage
-          </button>
+         
           <div id="Titulo" className="Tituloform">
-            <h1>
+            <h1 className="TitleLogIn">
               LOG IN
             </h1>
           </div>
@@ -33,8 +45,7 @@ const Novoform =() =>{
     <input type="password" className="form-control" id="exampleInputPassword1"/>
   </div>
   <div className="mb-3 form-check">
-    <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
-    <label className="form-check-label" for="exampleCheck1">Show Password</label>
+    
   </div>
   <button type="submit" className="btn btn-primary">Submit</button>
 </form>
