@@ -43,6 +43,15 @@ body
   font-family: "Arial";
 }
 
+.outBtn
+{
+  margin-top: 16.2px;
+  margin-right: 50px;
+  float: right;
+}
+
+
+
 /*.form-label
 {
   font-family: "Arial"

@@ -6,20 +6,27 @@ import reportWebVitals from './reportWebVitals';
 import "bootstrap/dist/css/bootstrap.min.css";
 //import "Components/Novo/Novoform";
 import Novoform from './Components/Novo/Novoform';
-//import Novoform from './Components/NovoFrontPage';
-import { BrowserRouter } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  NavLink
+} from 'react-router-dom';
+import NovoFrontPage from './Components/novo_frontPage/NovoFrontPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render
-(
-  <React.StrictMode>
-    <div className = "MainDiv">
-        <div className = "Form"> 
-          <Novoform/>
-        </div>
-    </div> 
-  </React.StrictMode>
-);
+  (
+    <React.StrictMode>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Novoform />} />
+            <Route path="/home" element={<NovoFrontPage />} />
+          </Routes>
+        </Router>
+    </React.StrictMode>
+  );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
