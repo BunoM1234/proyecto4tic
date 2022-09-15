@@ -8,17 +8,18 @@ import {
   Link,
   NavLink
 } from 'react-router-dom';
-import React from 'react';
+import {React} from 'react';
+import { Button } from 'react';
 
 const Novoform = () => {
   return (
     <div className = "completeDiv"> 
-      <div className="DarkBar" id="DarkBar">
+      <header className="DarkBar" id="DarkBar">
         <img className="Imagen2"
           src={Img2}
           alt="Imagen"
         />
-      </div>
+      </header>
       <div allign="right" >
         <img className="Imagen1"
           src={Img1}
@@ -35,7 +36,7 @@ const Novoform = () => {
         </div>
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label"><h5>User</h5></label>
-          <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+          <input type="text"className="form-control" id="exampleInputEmail1"/>
           <div id="emailHelp" className="form-text">Enter your User</div>
         </div>
         <div className="mb-3">
@@ -45,6 +46,9 @@ const Novoform = () => {
         <div className="mb-3 form-check">
         </div>
         <button className="btn btn-primary">Submit
+        </button>
+        <button variant="outlined" color="primary">
+          Primary
         </button>
         <Link to="/home"> Home</Link>
       </form>
