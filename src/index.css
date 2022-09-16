@@ -18,8 +18,8 @@ body
 
 .Tituloform
 {
-  font-family: "Tahoma Black"
-
+  font-family: "Tahoma Black";
+  
 }
 
 .Imagen2
@@ -51,6 +51,20 @@ body
   float: right;
 }
 
+.pcLine1
+{
+  margin-top: 60px;
+}
+
+.pcLine2
+{
+  margin-top: 120px;
+}
+
+.pcLine3
+{
+  margin-top: 150px;
+}
 
 /*.form-label
 {

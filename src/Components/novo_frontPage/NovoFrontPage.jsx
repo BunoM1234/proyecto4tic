@@ -15,11 +15,23 @@ const NovoFrontPage =() =>{
           <Button className="outBtn" variant="danger">Log Out</Button>{' '}
         </div>
           <div className="pageContent">
-            <input type="number" variant className="quantityInput1"></input>
-            <input type="number" variant className="quantityInput2"></input>
-            <input type="number" variant className="quantityInput2"></input>
-            <Button variant="outlined">OK</Button>
-            <Button>Delete</Button>
+            <div className ="pcLine1" align = "center">
+              <input type="number" variant className="quantityInput1"></input>
+              <input type="text" variant className="partInput1"></input>
+            </div>
+            <div className ="pcLine2" align="center">
+              <input type="number" variant className="quantityInput2"></input>
+              <input type="text" variant className="partInput2"></input>
+            </div>
+            <div className="pcLine3" align="center">
+              <input type="number" variant className="quantityInput3"></input>
+              <input type="text" variant className="partInput3"></input>
+            <div className="btnDiv">
+              <Button variant="primary">OK</Button>
+              <Button variant="danger">Delete</Button>
+            </div>
+          </div>
+          
           </div>
       </div>
     )};

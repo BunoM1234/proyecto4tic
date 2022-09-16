@@ -11,6 +11,7 @@ import {
 import {React} from 'react';
 import { Button } from 'react';
 
+
 const Novoform = () => {
   return (
     <div className = "completeDiv"> 
@@ -28,9 +29,10 @@ const Novoform = () => {
           height="600"
         />
       </div>
+    <div className = "form1DIV">
       <form className="Form1">
         <div id="Titulo" className="Tituloform">
-          <h1 className="TitleLogIn">
+          <h1 className="TitleLogIn" style={{fontFamily: 'Arial'}}>
             LOG IN
           </h1>
         </div>
@@ -52,6 +54,7 @@ const Novoform = () => {
         </button>
         <Link to="/home"> Home</Link>
       </form>
+    </div>
     </div>
   )
 };
