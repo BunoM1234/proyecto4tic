@@ -9,8 +9,7 @@ import {
   NavLink
 } from 'react-router-dom';
 import {React} from 'react';
-import { Button } from 'react';
-
+import Button from 'react-bootstrap/Button';
 
 const Novoform = () => {
   return (
@@ -43,13 +42,16 @@ const Novoform = () => {
         </div>
         <div className="mb-3">
           <label htmlFor="exampleInputPassword1" className="form-label"><h5>Password</h5></label>
-          <input type="password" className="form-control" id="exampleInputPassword1" />
-        </div>
+          <input type="text"className="form-control" id="inputUser"/>
+          <div id="emailHelp" className="form-text">Enter your password</div>
+        </div>  
         <div className="mb-3 form-check">
         </div>
-        <button className="btn btn-primary">Submit
-        </button>
-        <Link to="/home"> Home</Link>
+        <Link to="/home">
+            <Button type="button" className = "homeBtn" variant = "primary">
+              Sumbit
+            </Button>{''}
+          </Link>
       </form>
     </div>
     </div>
