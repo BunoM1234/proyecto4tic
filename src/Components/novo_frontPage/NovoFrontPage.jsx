@@ -13,8 +13,8 @@ import {
 
 const NovoFrontPage =() =>{
     return(
+    <form className = "form-home">
       <div>
-        
         <div className="DarkBar" id="DarkBar">
           <img className="Imagen2"
             src={Img2}
@@ -35,7 +35,9 @@ const NovoFrontPage =() =>{
               <Button variant="danger">Delete</Button>
             </div>
             <div className ="pcLine2" align="center">
-              <input type="text" variant className="partInput2"></input>
+              <input type="text" variant className="partInput2">
+                placeholder
+              </input>
               <input type="text" variant className="partsInput2"></input>
               <input type="number" variant className="quantityInput2"></input>
               <Button variant="danger">Delete</Button>
@@ -53,6 +55,7 @@ const NovoFrontPage =() =>{
           
           </div>
       </div>
+    </form>
     )};
 
   export default NovoFrontPage;

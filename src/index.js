@@ -14,6 +14,7 @@ import {
   NavLink
 } from 'react-router-dom';
 import NovoFrontPage from './Components/novo_frontPage/NovoFrontPage';
+//import NovoRegister from './Components/Novo_Register/NovoRegister';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render
@@ -23,6 +24,7 @@ root.render
           <Routes>
             <Route path="/" element={<Novoform />} />
             <Route path="/home" element={<NovoFrontPage />} />
+            
           </Routes>
         </Router>
     </React.StrictMode>
@@ -32,3 +34,4 @@ root.render
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 //reportWebVitals();
+//<Route path="/register" element={<NovoRegister />} />

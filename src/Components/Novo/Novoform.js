@@ -52,6 +52,9 @@ const Novoform = () => {
               Sumbit
             </Button>{''}
           </Link>
+        <Link to = "/register">
+          Create your account
+        </Link>
       </form>
     </div>
     </div>
