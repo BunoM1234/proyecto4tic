@@ -38,7 +38,7 @@ const Novoform = () => {
         </div>
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label"><h5>User</h5></label>
-          <input type="text"className="form-control" id="exampleInputEmail1"/>
+          <input type="text"className="form-control" id="inputUser"/>
           <div id="emailHelp" className="form-text">Enter your User</div>
         </div>
         <div className="mb-3">
@@ -48,9 +48,6 @@ const Novoform = () => {
         <div className="mb-3 form-check">
         </div>
         <button className="btn btn-primary">Submit
-        </button>
-        <button variant="outlined" color="primary">
-          Primary
         </button>
         <Link to="/home"> Home</Link>
       </form>
