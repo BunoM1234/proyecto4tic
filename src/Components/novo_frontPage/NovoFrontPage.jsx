@@ -1,64 +1,66 @@
-//import React from 'react';
-import * as React from 'react';
-import Img2 from '../Novo/novo-logo.png';
-import Button from 'react-bootstrap/Button';
-import DeleteIcon from './1345874.png'
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-  NavLink
-} from 'react-router-dom';
-import { useState } from 'react';
+import React from 'react';
+
+ import Img2 from '../Novo/novo-logo.png';
+ import Button from 'react-bootstrap/Button';
+ import DeleteIcon from './1345874.png'
+ import {
+   BrowserRouter as Router,
+   Routes,
+   Route,
+   Link,
+   NavLink
+ } from 'react-router-dom';
 
 
-function NovoFrontPage() {
-  const [serviceList, setServiceList] = useState([
-    {service: ""}
-  ]);
+
+
+// function NovoFrontPage() {
+//   const [serviceList, setServiceList] = useState([
+//     {service: ""}
+//   ]);
   
-  const handleServiceAdd = () => {
-         setServiceList([...setServiceList, {service: ""}])
-        }
+//   const handleServiceAdd = () => {
+//          setServiceList([...setServiceList, {service: ""}])
+//         }
       
-  const handleserviceRemove = () => {
-         const list= [...serviceList]
-          list.splice(index, 1);
-          setServiceList(list)
-        }
+//   const handleserviceRemove = () => {
+//          const list= [...serviceList]
+//           list.splice(index, 1);
+//           setServiceList(list)
+//         }
         
-return(
-    <form className="novoApp" autoComplete="off">
-      <div className="DivPrincipal">
-        <label htmlFor ="service"></label>
-        {serviceList.map((singleService, index) => (
-        <div key={index} className = "serviceList">
-          <div className ="firstDiv">
-            <input className = "service" type="text" id="service" required/>
-            {serviceList.length-1 === index && serviceList.length <4 && 
-              <button type="button" className="añadir"
-               onClick={handleServiceAdd}
-              >
-               <span>Add a service</span>
-              </button>
-            }
-          </div>
-          <div className="secondDiv">
-            {serviceList.length > 1 && (
-             <button type="button" className="borrar"
-              onClick={() => handleserviceRemove(index)}
-             >
-              <span>Remove</span>
-             </button>
-            )}
-          </div>
-        </div>
-        ))}
-      </div>
-    </form>
-    );
-  }
+// return(
+//     <form className="novoApp" autoComplete="off">
+//       <div className="DivPrincipal">
+//         <label htmlFor ="service"></label>
+//         {serviceList.map((singleService, index) => (
+//           <div key={index} className = "serviceList">
+//             <div className ="firstDiv">
+//               <input className = "service" type="text" id="service" required/>
+//               {serviceList.length-1 === index && serviceList.length <4 && 
+//                 (
+//                 <button type="button" className="añadir"
+//                 onClick={handleServiceAdd}
+//                 >
+//                 <span>Add a service</span>
+//                 </button>
+//                 )}
+//             </div>
+//             <div className="secondDiv">
+//               {serviceList.length > 1 && (
+//               <button type="button" className="borrar"
+//                 onClick={() => handleserviceRemove(index)}
+//               >
+//                 <span>Remove</span>
+//               </button>
+//             )}
+//           </div>
+//         </div>
+//         ))}
+//       </div>
+//     </form>
+//     );
+//   }
     
     // <form className = "form-home">
     //   <div>
@@ -104,3 +106,87 @@ return(
   // )};
 
   //export default NovoFrontPage;
+
+import { useState } from "react";
+
+
+
+function App() {
+  const [serviceList, setServiceList] = useState([{ service: "" }]);
+
+  const handleServiceChange = (e, index) => {
+    const { name, value } = e.target;
+    const list = [...serviceList];
+    list[index][name] = value;
+    setServiceList(list);
+  };
+
+  const handleServiceRemove = (index) => {
+    const list = [...serviceList];
+    list.splice(index, 1);
+    setServiceList(list);
+  };
+
+  const handleServiceAdd = () => {
+    setServiceList([...serviceList, { service: "" }]);
+  };
+
+  return (
+    <div>
+      <header className="DarkBar" id="DarkBar">
+        <img className="Imagen2"
+          src={Img2}
+          alt="Imagen"
+        />
+      <Link to ="/">
+        <Button className="outBtn" variant="danger">
+          Log Out
+        </Button>
+        </Link>
+      </header>
+    <form className="App" autoComplete="off">
+      <div className="form-field">
+        <label htmlFor="service">Service(s)</label>
+        {serviceList.map((singleService, index) => (
+          <div key={index} className="services">
+            <div className="first-division">
+              <input
+                name="service"
+                type="text"
+                id="service"
+                value={singleService.service}
+                onChange={(e) => handleServiceChange(e, index)}
+                required
+              />
+              {serviceList.length - 1 === index && serviceList.length < 4 && (
+                <Button
+                  type="button"
+                  onClick={handleServiceAdd}
+                  className="add-btn"
+                  variant = "primary"
+                >
+                  <span>Add a Service</span>
+                </Button>
+              )}
+            </div>
+            <div className="second-division">
+              {serviceList.length !== 1 && (
+                <button
+                  type="button"
+                  onClick={() => handleServiceRemove(index)}
+                  class="btn btn-outline-danger"
+                >
+                  <span>Remove</span>
+                </button>
+                
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </form>
+    </div>
+  );
+}
+
+export default App;
