@@ -47,14 +47,11 @@ const Novoform = () => {
         </div>  
         <div className="mb-3 form-check">
         </div>
-        <Link to="/home">
+          <Link to="/home">
             <Button type="button" className = "homeBtn" variant = "primary">
               Sumbit
             </Button>{''}
           </Link>
-        <Link to = "/register">
-          Create your account
-        </Link>
       </form>
     </div>
     </div>

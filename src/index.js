@@ -23,8 +23,7 @@ root.render
         <Router>
           <Routes>
             <Route path="/" element={<Novoform />} />
-            <Route path="/home" element={<NovoFrontPage />} />
-            
+            <Route path="/home" element={<NovoFrontPage />} />  
           </Routes>
         </Router>
     </React.StrictMode>
