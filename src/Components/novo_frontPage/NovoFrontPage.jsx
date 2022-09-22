@@ -175,6 +175,14 @@ function App() {
                 required
                 placeholder="Quantity"
               />
+              <input
+                name="name"
+                type=""
+                id="name"
+                className="name"
+                required
+                placeholder="Order name"
+              />
               {serviceList.length !== 1 && (
                 <button
                   type="button"
@@ -202,12 +210,15 @@ function App() {
           </div>
         ))}
       </div>
+    <Link to="/buy">
       <Button
         type="button"
         variant="primary"
+        className="buyOrder"
       >
         <span>Add to buy order</span>
       </Button>
+    </Link>
     </div>
     </form>
     </div>

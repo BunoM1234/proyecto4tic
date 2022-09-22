@@ -53,10 +53,15 @@ body
 .form-field
 {
   background-color: rgb(12, 8, 66);
- 
   padding: 50px;
   margin: 50px;
   border-radius: 10px;
+  width: 77%;
+}
+
+.name
+{
+  margin-left: 20px;
 }
 
 .BOM
@@ -66,19 +71,27 @@ body
 }
 .add-btn
 {
-  margin-left: 1020px;
+  margin-left: 830px;
+  margin-top: 10px;
 }
 
 .deleteBtn
 {
-  margin-left: 20px;  
+  margin-left: 20px;
+  margin-bottom: 30px; 
+}
+
+.buyOrder
+{
+  margin-top: -40px;
+  margin-left: 66.89%;
 }
 
 .completeDiv
 {
   width: 100%;
-  height: 100%;
-  background: linear-gradient(-45deg, #1100ff, #3456c5, #afadb9, #ffffff, #1900ff);
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #8e89d4, #768fe0, #afadb9, #ffffff, #7d71e2);
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
 }
@@ -93,6 +106,102 @@ body
   100%{
     background-position: 0% 50%;
   }
+}
+
+.card
+{
+  position: ;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 350px;
+  height: 612px;
+  background: #ffffff;
+  box-shadow: 9px 4px 4px rgba(223, 0, 255, 0.25);
+  border-radius: 25px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.text_back
+{
+  box-sizing: border-box;
+  width: 100%;
+  height: 50%;
+  background: #131315;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0);
+  border-radius: 0px 0px 25px 25px;
+}
+
+h1 
+{
+  border-bottom: 1px solid #df00ff;
+  padding-bottom: 15px;
+  font-size: 1.75vw;
+  font-weight: 400;
+}
+
+.text_back div
+{
+  width: 85%;
+  margin: auto;
+}
+
+p
+{
+  font-size: 1vw;
+  font-weight: 400;
+  margin-top: 5%;
+}
+
+span
+{
+  color: #DB9EDF;
+  margin-top: 25%;
+}
+
+.image_container
+{
+  width: 100%;
+  height: 50%;
+  border-radius: 25px 25px 0px 0px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+}
+
+.card:hover {
+  transform: translate(-50%, -50%)rotateY(180deg);
+}
+
+.flip-card-back
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-back
+{
+  background: #19191A;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+h2 
+{
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
 }
 /*
 .pcLine1

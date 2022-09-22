@@ -42,12 +42,12 @@ const Novoform = () => {
         </div>
         <div className="mb-3">
           <label htmlFor="exampleInputPassword1" className="form-label"><h5>Password</h5></label>
-          <input type="text"className="form-control" id="inputUser"/>
+          <input type="password"className="form-control" id="inputUser"/>
           <div id="emailHelp" className="form-text">Enter your password</div>
         </div>  
         <div className="mb-3 form-check">
         </div>
-          <Link to="/home">
+          <Link to="/main">
             <Button type="button" className = "homeBtn" variant = "primary">
               Sumbit
             </Button>{''}
