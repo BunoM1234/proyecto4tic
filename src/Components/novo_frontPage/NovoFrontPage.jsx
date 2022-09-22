@@ -132,7 +132,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="completeDiv">
       <header className="DarkBar" id="DarkBar">
         <img className="Imagen2"
           src={Img2}
@@ -145,8 +145,8 @@ function App() {
         </Link>
       </header>
     <form className="App" autoComplete="off">
+    <div class="gradient" className="gradient">
       <div className="form-field">
-        <label htmlFor="service">Service(s)</label>
         {serviceList.map((singleService, index) => (
           <div key={index} className="services">
             <div className="first-division">
@@ -156,9 +156,39 @@ function App() {
                 id="service"
                 value={singleService.service}
                 onChange={(e) => handleServiceChange(e, index)}
+                placeholder="Board"
                 required
               />
-              {serviceList.length - 1 === index && serviceList.length < 4 && (
+              <input
+                name="BOM"
+                type="text"
+                id="BOM"
+                className="BOM"
+                required
+                placeholder="BOM"
+              />
+              <input
+                name="quantity"
+                type="number"
+                id="quantity"
+                className="quantity"
+                required
+                placeholder="Quantity"
+              />
+              {serviceList.length !== 1 && (
+                <button
+                  type="button"
+                  onClick={() => handleServiceRemove(index)}
+                  class="btn btn-outline-danger"
+                  name="deleteBtn"
+                >
+                  <span>Remove</span>
+                </button>
+              )}
+            </div>
+            <div className="second-division">
+              
+              {serviceList.length - 1 === index && serviceList.length < 15 && (
                 <Button
                   type="button"
                   onClick={handleServiceAdd}
@@ -169,21 +199,16 @@ function App() {
                 </Button>
               )}
             </div>
-            <div className="second-division">
-              {serviceList.length !== 1 && (
-                <button
-                  type="button"
-                  onClick={() => handleServiceRemove(index)}
-                  class="btn btn-outline-danger"
-                >
-                  <span>Remove</span>
-                </button>
-                
-              )}
-            </div>
           </div>
         ))}
       </div>
+      <Button
+        type="button"
+        variant="primary"
+      >
+        <span>Add to buy order</span>
+      </Button>
+    </div>
     </form>
     </div>
   );

@@ -13,7 +13,7 @@ import Button from 'react-bootstrap/Button';
 
 const Novoform = () => {
   return (
-    <div className = "completeDiv"> 
+    <div className = "completeDiv1"> 
       <header className="DarkBar" id="DarkBar">
         <img className="Imagen2"
           src={Img2}
