@@ -110,34 +110,36 @@ body
 
 .card
 {
-  position: ;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
   width: 350px;
   height: 612px;
   background: #ffffff;
-  box-shadow: 9px 4px 4px rgba(223, 0, 255, 0.25);
   border-radius: 25px;
   transition: transform 0.8s;
   transform-style: preserve-3d;
   cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(98, 94, 199, 0.573);
 }
+
+
 
 .text_back
 {
-  box-sizing: border-box;
+  box-sizing:initial;
   width: 100%;
   height: 50%;
-  background: #131315;
+  background: #0f073f ;
   border: 1px solid #000000;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0);
-  border-radius: 0px 0px 25px 25px;
+  border-radius: 0px 0px 5px 5px;
+  box-shadow: 0px 4px 4px rgba(98, 94, 199, 0.573);
 }
 
-h1 
+.h1TxtBack 
 {
-  border-bottom: 1px solid #df00ff;
+  border-bottom: 1px solid #452ae0;
   padding-bottom: 15px;
   font-size: 1.75vw;
   font-weight: 400;
@@ -149,6 +151,11 @@ h1
   margin: auto;
 }
 
+.h1TxtBack
+{
+  color: #452ae0;
+}
+
 p
 {
   font-size: 1vw;
@@ -156,21 +163,23 @@ p
   margin-top: 5%;
 }
 
-span
+.span1
 {
-  color: #DB9EDF;
+  color: #452ae0;
   margin-top: 25%;
+  margin-bottom: 200px;
 }
 
-.image_container
+.Imagen4
 {
   width: 100%;
   height: 50%;
-  border-radius: 25px 25px 0px 0px;
+  border-radius: 5px 5px 0px 0px;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
+  
 }
 
 .card:hover {
@@ -182,14 +191,14 @@ span
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 25px;
+  border-radius: 5px;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
 .flip-card-back
 {
-  background: #19191A;
+  background: #0f073f;
   color: white;
   transform: rotateY(180deg);
 }
@@ -202,6 +211,18 @@ h2
   left: 50%;
   text-align: center;
   transform: translate(-50%, -50%);
+}
+
+.cardDiv
+{
+  margin-top: 250px;
+  margin-right: 550px;
+}
+
+.cardDiv2
+{
+  margin-top: -400px;
+  margin-left: 550px;
 }
 /*
 .pcLine1

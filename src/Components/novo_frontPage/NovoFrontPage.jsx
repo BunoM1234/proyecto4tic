@@ -134,10 +134,12 @@ function App() {
   return (
     <div className="completeDiv">
       <header className="DarkBar" id="DarkBar">
+      <Link to="/main">
         <img className="Imagen2"
           src={Img2}
           alt="Imagen"
         />
+      </Link>
       <Link to ="/">
         <Button className="outBtn" variant="danger">
           Log Out
