@@ -27,7 +27,7 @@ root.render
             <Route path="/" element={<Novoform />} />
             <Route path="/home" element={<NovoFrontPage />} />
             <Route path="/main" element={<NovoMain/>} />
-            <Route path="/buy" element={<NovoBuy/>}/>
+            <Route path="/orders" element={<NovoBuy/>}/>
           </Routes>
         </Router>
     </React.StrictMode>

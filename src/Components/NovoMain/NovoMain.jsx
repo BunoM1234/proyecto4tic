@@ -6,9 +6,10 @@ import {
     Link,
     NavLink
   } from 'react-router-dom';
-  import Img4 from './icono-de-carro-la-compra-añadir-al-carrito-diseño-plano-sobre-fondo-blanco-ilustración-vectorial-vector-210692317.jpg';
+  import Img4 from './testing-kit.5a620275.png';
   import Button from 'react-bootstrap/Button';
   import Img2 from '../Novo/novo-logo.png';
+  import Img5 from './SBC002AV.2824187d.png';
 
 function NovoMain() {
 
@@ -74,7 +75,7 @@ function NovoMain() {
          
           <div class="image_container">
             <img className="Imagen4"
-            src={Img4}
+            src={Img5}
             alt="Imagen4"
           />
           </div>
