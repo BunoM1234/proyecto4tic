@@ -130,6 +130,7 @@ function App() {
   const handleServiceAdd = () => {
     setServiceList([...serviceList, { service: "" }]);
   };
+  
 
   return (
     <div className="completeDiv">
@@ -212,15 +213,13 @@ function App() {
           </div>
         ))}
       </div>
-    <Link to="/buy">
       <Button
-        type="button"
+        type="sumbit"
         variant="primary"
         className="buyOrder"
       >
         <span>Add to buy order</span>
       </Button>
-    </Link>
     </div>
     </form>
     </div>

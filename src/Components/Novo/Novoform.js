@@ -29,33 +29,44 @@ const Novoform = () => {
         />
       </div>
     <div className = "form1DIV">
-      <form className="Form1">
+      <form className="Form1" onSubmit={ev => {
+        ev.preventDefault();
+
+        const inputUser= ev.target.inputUser.value;
+        const inputPass = ev.target.inputPass.value;
+      
+        login(inputUser, inputPass);
+      }}>
         <div id="Titulo" className="Tituloform">
           <h1 className="TitleLogIn" style={{fontFamily: 'Arial'}}>
             LOG IN
           </h1>
         </div>
-        <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label"><h5>User</h5></label>
-          <input type="text"className="form-control" id="inputUser"/>
-          <div id="emailHelp" className="form-text">Enter your User</div>
+        <div className="mb-4">
+          <input type="text"class="input" id="user"required/>
+          <label for="user" class="input-label">Enter User</label>
         </div>
         <div className="mb-3">
-          <label htmlFor="exampleInputPassword1" className="form-label"><h5>Password</h5></label>
-          <input type="password"className="form-control" id="inputUser"/>
-          <div id="emailHelp" className="form-text">Enter your password</div>
+          <input type="password"className="inputPass" id="pass" required/>
+          <label for="pass" className="passlabel">Enter password</label>
         </div>  
         <div className="mb-3 form-check">
         </div>
-          <Link to="/main">
-            <Button type="button" className = "homeBtn" variant = "primary">
+            <Button type="sumbit" className = "homeBtn" variant = "primary">
               Sumbit
             </Button>{''}
-          </Link>
       </form>
     </div>
-    </div>
+  </div>
   )
 };
+
+const login = (inputUser, inputPass) => {
+  if (inputUser === 'benji' && inputPass === 'chej')
+  alert('Login correcto')
+  else
+  alert('login incorrecto')
+}
+
 
 export default Novoform;
