@@ -25,7 +25,7 @@ function NovoMain() {
         />
       </Link>
       <Link to ="/">
-        <Button className="outBtn" variant="danger">
+        <Button className="outBtn" variant="primary">
           Log Out
         </Button>
         </Link>
@@ -95,8 +95,9 @@ function NovoMain() {
      
         </div>
         </Link>
-
       </div>
+
+      
     )
 
 }

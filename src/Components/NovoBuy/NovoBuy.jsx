@@ -11,6 +11,8 @@ import {
   import "bootstrap/dist/css/bootstrap.min.css";
   import { useTable } from 'react-table';
   import Table from 'react-bootstrap/Table';
+  import { FaFileCsv } from "react-icons/fa"
+
 
 
 
@@ -25,7 +27,7 @@ const NovoForm = () => {
                 />
             </Link>
             <Link to ="/">
-                <Button className="outBtn" variant="danger">
+                <Button className="outBtn" variant="primary">
                     Log Out
                 </Button>
             </Link>
@@ -69,6 +71,10 @@ const NovoForm = () => {
       </tbody>
     </Table>
 </div>
+<Button className="csvBtn">
+    <span style={{margin: 10}}>Export as CSV</span>
+    <FaFileCsv />
+</Button>
     </div>
     )};
 

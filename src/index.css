@@ -40,6 +40,7 @@ body
 
 .TitleLogIn
 {
+  margin-top: -50px;
   font-family: "Arial";
 }
 
@@ -84,7 +85,7 @@ body
 .buyOrder
 {
   margin-top: -40px;
-  margin-left: 66.89%;
+  margin-right: 40px;
 }
 
 .completeDiv
@@ -233,44 +234,67 @@ h2
   border-radius: 20px;
 }
 
-.input-group
+.inputUser
 {
-  position: relative;
-}
-
-.input
-{
-  padding: 10px;
-  border: none;
+  margin-top: 15px;
   border-radius: 4px;
   font: inherit;
-  color:blue ;
+  color: black;
   background-color: transparent;
-  outline: 2px solid rgb(74, 52, 136);
-  width: 100%;
+  outline: 2px solid #1f1070;
+  border: none;
+  padding: 6px;
+  width: 300px;
 }
 
-.input-label
+.inputPass
 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(10px, 10px);
-  transition: transform .25s;
+  margin-top: 15px;
+  border-radius: 4px;
+  font: inherit;
+  color: black;
+  background-color: transparent;
+  outline: 2px solid #1f1070;
+  border: none;
+  padding: 6px;
+  width: 300px;
 }
 
-.input:focus+.input-label,
-.input:valid+.input-label 
+.homeBtn
 {
-  transform: translate(10px, -14px) scale(.8);
-  color:rgb(12, 8, 66);
-  padding-inline: 5px;
-  background-color: #242329;
+  margin-top: 3px;
+  margin-bottom: 50px;
 }
 
-.inputUser:is(:focus, :valid)
+.form1DIV
 {
-  outline-color: #4f38a3;
+  margin-left: 40px;
+  margin-top: 80px;
+  padding: 6px;
+  outline: 2px solid #452ae0;
+  width: 600px;
+  border-radius: 4px;
+}
+
+.name{
+  margin-right: 20px;
+}
+
+.makeOrder
+{
+  margin-left: 720px;
+}
+
+.iconCSV
+{
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+.csvBtn
+{
+  margin-left: 1189px;
 }
 /*
 .pcLine1

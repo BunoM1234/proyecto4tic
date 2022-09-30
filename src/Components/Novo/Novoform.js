@@ -10,6 +10,7 @@ import {
 } from 'react-router-dom';
 import {React} from 'react';
 import Button from 'react-bootstrap/Button';
+import NovoMain from '../NovoMain/NovoMain';
 
 const Novoform = () => {
   return (
@@ -43,12 +44,10 @@ const Novoform = () => {
           </h1>
         </div>
         <div className="mb-4">
-          <input type="text"class="input" id="user"required/>
-          <label for="user" class="input-label">Enter User</label>
+          <input type="text"id="inputUser" required className="inputUser" placeholder="Enter user"/>
         </div>
         <div className="mb-3">
-          <input type="password"className="inputPass" id="pass" required/>
-          <label for="pass" className="passlabel">Enter password</label>
+          <input type="password"className="inputPass" id="inputPass" required placeholder="Enter password"/>
         </div>  
         <div className="mb-3 form-check">
         </div>
@@ -63,7 +62,8 @@ const Novoform = () => {
 
 const login = (inputUser, inputPass) => {
   if (inputUser === 'benji' && inputPass === 'chej')
-  alert('Login correcto')
+  window.location.replace('/main');
+
   else
   alert('login incorrecto')
 }

@@ -142,7 +142,7 @@ function App() {
         />
       </Link>
       <Link to ="/">
-        <Button className="outBtn" variant="danger">
+        <Button className="outBtn" variant="primary">
           Log Out
         </Button>
         </Link>
@@ -178,14 +178,6 @@ function App() {
                 required
                 placeholder="Quantity"
               />
-              <input
-                name="name"
-                type=""
-                id="name"
-                className="name"
-                required
-                placeholder="Order name"
-              />
               {serviceList.length !== 1 && (
                 <button
                   type="button"
@@ -208,18 +200,30 @@ function App() {
                 >
                   <span>Add a Service</span>
                 </Button>
+                
               )}
             </div>
           </div>
         ))}
       </div>
-      <Button
-        type="sumbit"
-        variant="primary"
-        className="buyOrder"
-      >
-        <span>Add to buy order</span>
-      </Button>
+      <div className="makeOrder">
+      <input
+          name="name"
+          type=""
+          id="name"
+          className="name"
+          required
+          placeholder="Order name"
+        />
+        <Button
+          type="sumbit"
+          variant="primary"
+          class="buyOrder"
+        >
+          <span class="text">Add to buy order</span>
+          <i class="ri-check-line icon"></i>
+        </Button>
+      </div>
     </div>
     </form>
     </div>
