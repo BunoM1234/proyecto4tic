@@ -268,12 +268,13 @@ h2
 
 .form1DIV
 {
-  margin-left: 40px;
+  margin-left: 60px;
   margin-top: 80px;
   padding: 6px;
   outline: 2px solid #452ae0;
   width: 600px;
   border-radius: 4px;
+  box-shadow: 8px 8px 4px rgb(120, 120, 175);
 }
 
 .name{
@@ -294,8 +295,19 @@ h2
 
 .csvBtn
 {
-  margin-left: 1189px;
+  margin-left: 1000px;
 }
+
+.flip-card-back
+{
+  padding: 20%;
+}
+
+.ordersTxt
+{
+  color: #2c15af;
+}
+
 /*
 .pcLine1
 {

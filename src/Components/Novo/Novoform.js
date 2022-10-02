@@ -39,7 +39,7 @@ const Novoform = () => {
         login(inputUser, inputPass);
       }}>
         <div id="Titulo" className="Tituloform">
-          <h1 className="TitleLogIn" style={{fontFamily: 'Arial'}}>
+          <h1 className="TitleLogIn" style={{fontFamily: 'helvetica'}}>
             LOG IN
           </h1>
         </div>

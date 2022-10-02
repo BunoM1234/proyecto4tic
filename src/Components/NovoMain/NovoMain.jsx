@@ -37,6 +37,9 @@ function NovoMain() {
             <h1>
               Continue
             </h1>
+            <h6 className = "ordersTxt">
+              You have 0 uncompleted orders
+            </h6>
           </div>
     
          
@@ -70,6 +73,9 @@ function NovoMain() {
             <h1>
               Continue
             </h1>
+            <h6 className = "ordersTxt">
+              You have 0 pending orders
+            </h6>
           </div>
     
          
