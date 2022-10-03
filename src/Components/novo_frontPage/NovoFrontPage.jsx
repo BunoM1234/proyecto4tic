@@ -141,6 +141,7 @@ function App() {
           src={Img2}
           alt="Imagen"
         />
+            
       </Link>
       <Link to ="/">
         <Button className="outBtn" variant="primary">
@@ -149,8 +150,14 @@ function App() {
         </Link>
       </header>
     <form className="App" autoComplete="off">
-    <div class="gradient" className="gradient">
+    <div className="gradient">
       <div className="form-field">
+      <div className="filterDiv">
+      <Button className= "filterBtn">
+              <span>Filter</span>
+              <FaFilter />
+      </Button>
+      </div>
         {serviceList.map((singleService, index) => (
           <div key={index} className="services">
             <div className="first-division">
@@ -191,7 +198,6 @@ function App() {
               )}
             </div>
             <div className="second-division">
-              
               {serviceList.length - 1 === index && serviceList.length < 15 && (
                 <Button
                   type="button"
@@ -203,10 +209,6 @@ function App() {
                 </Button>
                 
               )}
-            <Button className= "filterBtn">
-              <span style={{margin: 10}}>Filter</span>
-              <FaFilter />
-            </Button>
             </div>
           </div>
         ))}

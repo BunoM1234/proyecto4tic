@@ -25,8 +25,8 @@ const Novoform = () => {
         <img className="Imagen1"
           src={Img1}
           alt="Imagen"
-          width="600"
-          height="600"
+          width="550"
+          height="550"
         />
       </div>
     <div className = "form1DIV">

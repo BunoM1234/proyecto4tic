@@ -107,15 +107,6 @@ const Users = [
     Price: "$254"
   },
   {
-    id: 1,
-    selected: false,
-    Board: "BC548",
-    CODE: "",
-    Quantity: "1-770-736-8031 x56442",
-    StockAvailable: "hildegard.org",
-    Price: "$254"
-  },
-  {
     id: 2,
     selected: false,
     Board: "BC548",
@@ -135,6 +126,15 @@ const Users = [
   },
   {
     id: 4,
+    selected: false,
+    Board: "BC548",
+    CODE: "",
+    Quantity: "1-770-736-8031 x56442",
+    StockAvailable: "hildegard.org",
+    Price: "$254"
+  },
+  {
+    id: 5,
     selected: false,
     Board: "BC548",
     CODE: "",
