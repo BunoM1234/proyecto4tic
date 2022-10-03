@@ -203,7 +203,7 @@ function App() {
                 </Button>
                 
               )}
-            <Button>
+            <Button className= "filterBtn">
               <span style={{margin: 10}}>Filter</span>
               <FaFilter />
             </Button>
