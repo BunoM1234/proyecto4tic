@@ -10,6 +10,7 @@ import React from 'react';
    Link,
    NavLink
  } from 'react-router-dom';
+ import { FaFilter } from "react-icons/fa"
 
 
 
@@ -202,6 +203,10 @@ function App() {
                 </Button>
                 
               )}
+            <Button>
+              <span style={{margin: 10}}>Filter</span>
+              <FaFilter />
+            </Button>
             </div>
           </div>
         ))}

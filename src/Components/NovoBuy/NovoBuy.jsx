@@ -94,48 +94,53 @@ import React from "react";
    import "bootstrap/dist/css/bootstrap.min.css";
    import { useTable } from 'react-table';
    import Table from 'react-bootstrap/Table';
-   import { FaFileCsv } from "react-icons/fa"
+   import { FaFileCsv } from "react-icons/fa";
 
 const Users = [
   {
     id: 1,
     selected: false,
-    name: "Leanne Graham",
-    email: "Sincere@april.biz",
-    phone: "1-770-736-8031 x56442",
-    website: "hildegard.org",
+    Board: "BC548",
+    CODE: "1727-2638-1-ND",
+    Quantity: "56",
+    StockAvailable: "OK",
+    Price: "$254"
+  },
+  {
+    id: 1,
+    selected: false,
+    Board: "BC548",
+    CODE: "",
+    Quantity: "1-770-736-8031 x56442",
+    StockAvailable: "hildegard.org",
+    Price: "$254"
   },
   {
     id: 2,
     selected: false,
-    name: "Ervin Howell",
-    email: "Shanna@melissa.tv",
-    phone: "010-692-6593 x09125",
-    website: "anastasia.net",
+    Board: "BC548",
+    CODE: "",
+    Quantity: "1-770-736-8031 x56442",
+    StockAvailable: "hildegard.org",
+    Price: "$254"
   },
   {
     id: 3,
     selected: false,
-    name: "Clementine Bauch",
-    email: "Nathan@yesenia.net",
-    phone: "1-463-123-4447",
-    website: "ramiro.info",
+    Board: "BC548",
+    CODE: "",
+    Quantity: "1-770-736-8031 x56442",
+    StockAvailable: "hildegard.org",
+    Price: "$254"
   },
   {
     id: 4,
-    selected: true,
-    name: "Patricia Lebsack",
-    email: "Julianne.OConner@kory.org",
-    phone: "493-170-9623 x156",
-    website: "kale.biz",
-  },
-  {
-    id: 5,
     selected: false,
-    name: "Chelsey Dietrich",
-    email: "Lucio_Hettinger@annie.ca",
-    phone: "(254)954-1289",
-    website: "demarco.info",
+    Board: "BC548",
+    CODE: "",
+    Quantity: "1-770-736-8031 x56442",
+    StockAvailable: "hildegard.org",
+    Price: "$254"
   },
 ];
 
@@ -194,7 +199,7 @@ class SelectTableComponent extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className ="completeDiv2">
          <header className="DarkBar" id="DarkBar">
              <Link to="/main">
                  <img className="Imagen2"
@@ -211,6 +216,7 @@ class SelectTableComponent extends React.Component {
       <div className="container">
         <div className="row">
           <div className="col-md-12">
+            <div className = "tableDiv">
             <table className="table">
               <thead>
                 <tr>
@@ -223,10 +229,11 @@ class SelectTableComponent extends React.Component {
                       onChange={(e) => this.onMasterCheck(e)}
                     />
                   </th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Email</th>
-                  <th scope="col">Phone</th>
-                  <th scope="col">Website</th>
+                  <th scope="col">Board</th>
+                  <th scope="col">Code</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Stock avilable</th>
+                  <th scope="col">Price</th>
                 </tr>
               </thead>
               <tbody>
@@ -241,20 +248,23 @@ class SelectTableComponent extends React.Component {
                         onChange={(e) => this.onItemCheck(e, user)}
                       />
                     </th>
-                    <td>{user.name}</td>
-                    <td>{user.email}</td>
-                    <td>{user.phone}</td>
-                    <td>{user.website}</td>
+                    <td>{user.Board}</td>
+                    <td>{user.CODE}</td>
+                    <td>{user.Quantity}</td>
+                    <td>{user.StockAvailable}</td>
+                    <td>{user.Price}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
-            <button
+            </div>
+            <Button
+              variant="danger"
               className="btn btn-primary"
               onClick={() => this.getSelectedRows()}
             >
-              Get Selected Items {this.state.SelectedList.length} 
-            </button>
+              Delete Selected Items {this.state.SelectedList.length} 
+            </Button>
             <Button className="csvBtn">
                <span style={{margin: 10}}>Export as CSV</span>
               <FaFileCsv />

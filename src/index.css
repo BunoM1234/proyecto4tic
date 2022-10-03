@@ -271,10 +271,10 @@ h2
   margin-left: 60px;
   margin-top: 80px;
   padding: 6px;
-  outline: 2px solid #452ae0;
+  outline: 2px solid #2d10d1;
   width: 600px;
   border-radius: 4px;
-  box-shadow: 8px 8px 4px rgb(120, 120, 175);
+  box-shadow: 8px 8px 4px rgb(190, 190, 190);
 }
 
 .name{
@@ -308,6 +308,24 @@ h2
   color: #2c15af;
 }
 
+.table
+{
+  margin-top: 20px;
+  border-radius: 4px;
+  outline: 2px solid #452ae0;
+}
+
+.tableDiv
+{
+  background-color:rgb(255, 255, 255);
+}
+
+.completeDiv2
+{
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgb(151, 157, 240);
+}
 /*
 .pcLine1
 {
