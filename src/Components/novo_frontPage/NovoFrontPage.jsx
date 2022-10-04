@@ -127,7 +127,7 @@ function App() {
     list.splice(index, 1);
     setServiceList(list);
   };
-
+  
   const handleServiceAdd = () => {
     setServiceList([...serviceList, { service: "" }]);
   };

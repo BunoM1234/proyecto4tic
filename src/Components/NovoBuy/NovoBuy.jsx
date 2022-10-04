@@ -93,8 +93,9 @@ import React from "react";
    import Img2 from '../Novo/novo-logo.png';
    import "bootstrap/dist/css/bootstrap.min.css";
    import { useTable } from 'react-table';
-   import Table from 'react-bootstrap/Table';
+   //import Table from 'react-bootstrap/Table';
    import { FaFileCsv } from "react-icons/fa";
+   import MaterialTable from 'material-table';
 
 const Users = [
   {
@@ -144,6 +145,14 @@ const Users = [
   },
 ];
 
+const columns = [
+  { title: "Board", field: "id"},
+  { title: "Code", field: "code"},
+  { title: "Quantity", field: "quantity"},
+  { title: "Stock available", field: "stock available"},
+  { title: "Price", field: "price"},
+]
+
 class SelectTableComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -168,6 +177,7 @@ class SelectTableComponent extends React.Component {
     });
   }
 
+  
   // Update List Item's state and Master Checkbox State
   onItemCheck(e, item) {
     let tempList = this.state.List;
@@ -181,7 +191,6 @@ class SelectTableComponent extends React.Component {
     //To Control Master Checkbox State
     const totalItems = this.state.List.length;
     const totalCheckedItems = tempList.filter((e) => e.selected).length;
-
     // Update State
     this.setState({
       MasterChecked: totalItems === totalCheckedItems,
@@ -189,6 +198,8 @@ class SelectTableComponent extends React.Component {
       SelectedList: this.state.List.filter((e) => e.selected),
     });
   }
+
+
 
   // Event to get selected rows(Optional)
   getSelectedRows() {
@@ -198,6 +209,7 @@ class SelectTableComponent extends React.Component {
   }
 
   render() {
+    console.log("hola")
     return (
       <div className ="completeDiv2">
          <header className="DarkBar" id="DarkBar">
@@ -217,62 +229,18 @@ class SelectTableComponent extends React.Component {
         <div className="row">
           <div className="col-md-12">
             <div className = "tableDiv">
-            <table className="table">
-              <thead>
-                <tr>
-                  <th scope="col">
-                    <input
-                      type="checkbox"
-                      className="form-check-input"
-                      checked={this.state.MasterChecked}
-                      id="mastercheck"
-                      onChange={(e) => this.onMasterCheck(e)}
-                    />
-                  </th>
-                  <th scope="col">Board</th>
-                  <th scope="col">Code</th>
-                  <th scope="col">Quantity</th>
-                  <th scope="col">Stock avilable</th>
-                  <th scope="col">Price</th>
-                </tr>
-              </thead>
-              <tbody>
-                {this.state.List.map((user) => (
-                  <tr key={user.id} className={user.selected ? "selected" : ""}>
-                    <th scope="row">
-                      <input
-                        type="checkbox"
-                        checked={user.selected}
-                        className="form-check-input"
-                        id="rowcheck{user.id}"
-                        onChange={(e) => this.onItemCheck(e, user)}
-                      />
-                    </th>
-                    <td>{user.Board}</td>
-                    <td>{user.CODE}</td>
-                    <td>{user.Quantity}</td>
-                    <td>{user.StockAvailable}</td>
-                    <td>{user.Price}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-            </div>
-            <Button
-              variant="danger"
-              className="btn btn-primary"
-              onClick={() => this.getSelectedRows()}
-            >
-              Delete Selected Items {this.state.SelectedList.length} 
-            </Button>
-            <Button className="csvBtn">
-               <span style={{margin: 10}}>Export as CSV</span>
-              <FaFileCsv />
-           </Button>
+              <MaterialTable
+                title="Novo parts"
+                data={Users}
+                columns={columns}
+                options={{
+                  selection: true
+                }} />
           </div>
         </div>
       </div>
     </div>
+  </div>
     );
   }
 }
