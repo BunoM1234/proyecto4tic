@@ -10,13 +10,14 @@ import {
   import Button from 'react-bootstrap/Button';
   import Img2 from '../Novo/novo-logo.png';
   import Img5 from './SBC002AV.2824187d.png';
+  
 
 function NovoMain() {
 
 
     return(
 
-  <div className="CompleteDiv2">
+  <div className="completeDiv5">
        <header className="DarkBar" id="DarkBar">
       <Link to="/main">
         <img className="Imagen2"
@@ -31,6 +32,7 @@ function NovoMain() {
         </Link>
        </header>
     <Link to="/home">
+    
       <div className="cardDiv">
        <div className="card">
           <div class="flip-card-back">

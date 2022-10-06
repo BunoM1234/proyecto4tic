@@ -11,7 +11,7 @@ import React from 'react';
    NavLink
  } from 'react-router-dom';
  import { FaFilter } from "react-icons/fa"
-
+ import {AiFillNotification} from "react-icons/ai"
 
 
 
@@ -109,6 +109,7 @@ import React from 'react';
   //export default NovoFrontPage;
 
 import { useState } from "react";
+import { Windows } from 'css.gg';
 
 
 
@@ -131,6 +132,20 @@ function App() {
   const handleServiceAdd = () => {
     setServiceList([...serviceList, { service: "" }]);
   };
+
+  const NotificationBtn = document.querySelector(".buyOrder");
+
+  const requestPermission = function() {
+    if(!("Notification" in Windows))
+      throw new Error("Browser does not support Notification");
+
+    Notification.requestPermission().then((permission) => {
+        const notification = new Notification("New", {
+          body: "A new order has been created",
+        });
+    });
+  };
+  
   
 
   return (
@@ -204,6 +219,7 @@ function App() {
                   onClick={handleServiceAdd}
                   className="add-btn"
                   variant = "primary"
+                  onClick={NotificationBtn}  
                 >
                   <span>Add a Service</span>
                 </Button>

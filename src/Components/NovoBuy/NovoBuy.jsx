@@ -96,6 +96,9 @@ import React from "react";
    //import Table from 'react-bootstrap/Table';
    import { FaFileCsv } from "react-icons/fa";
    import MaterialTable from 'material-table';
+   import tableIcons from '../tableIcons/tableIcons'
+
+
 
    const NovoBuy = () => {
   
@@ -114,8 +117,11 @@ import React from "react";
                  </Button>
              </Link>
         </header>
-              <MaterialTable
-                title="Basic Selection Preview"
+            <div className="NovoTableDiv">
+              <MaterialTable 
+                className = "NovoTable"
+                title="Parts table"
+                icons={tableIcons}
                 columns={[
                     { title: "Board", field: "board"},
                     { title: "Code", field: "code"},
@@ -124,13 +130,19 @@ import React from "react";
                     { title: "Price", field: "price", type: "numeric"},
                 ]}
                 data={[
-                    { board: 'Mehmet', code: 'Baran', quantity: 1987, stock: 63, price: 210 },
+                    { board: 'PCB_B', code: '12356', quantity: 4, stock: 'No', price: 40 },
+                    { board: 'PCB_A', code: '123', quantity: 3, stock: 'Yes', price: 35 },
                 ]}
                 options={{
-                  selection: true
-                }} 
+                    exportButton: true,
+                    selection: true,
+                    headerStyle: {
+                        backgroundColor: '#EEE',
+                }}}
               />
+              </div>
         </div>
+    
     );
 };
 

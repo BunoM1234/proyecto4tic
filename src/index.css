@@ -65,6 +65,7 @@ body
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
 }
 
 .form-field
@@ -102,8 +103,8 @@ body
 
 .buyOrder
 {
-  margin-top: -40px;
-  margin-right: 40px;
+  position: absolute;
+  right: 50%;
 }
 
 .completeDiv
@@ -299,10 +300,6 @@ h2
   margin-right: 20px;
 }
 
-.makeOrder
-{
-  margin-left: 720px;
-}
 
 .iconCSV
 {
@@ -344,6 +341,7 @@ h2
   min-height: 100vh;
   background-color: rgb(151, 157, 240);
   
+  
 }
 
 .filterBtn
@@ -376,7 +374,70 @@ h2
   width: fit-content;
 }
 
+.completeDiv2
+{
+  min-height: 100vh;
+  display: flex;
+}
 
+.completeDiv2 > * {
+  margin: auto;
+}
+
+.NovoTableDiv
+{
+  outline: 2px solid #452ae0;
+  border-radius: 0.3%;
+  width: 90vw;
+}
+
+.outBtn
+{
+  position: relative;
+}
+
+.completeDiv3
+{
+  min-height: 100vh;
+  display: flex;
+}
+
+.completeDiv3 > * {
+  margin: auto;
+}
+
+.cardDiv
+{
+  margin-top: 300px;
+  position: relative;
+}
+
+.cardDiv2
+{
+  position:relative;
+}
+
+
+.makeOrder
+{
+  display: flex;
+  position: relative;
+}
+
+.name
+{
+  position: absolute;
+  top: 40%;
+  right: 0%;
+}
+
+/* .services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+} */
 /*
 .pcLine1
 {
