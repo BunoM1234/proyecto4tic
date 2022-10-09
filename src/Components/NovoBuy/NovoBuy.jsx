@@ -138,7 +138,16 @@ import React from "react";
                     selection: true,
                     headerStyle: {
                         backgroundColor: '#EEE',
+                    actionsColumnIndex: -1,
                 }}}
+                actions={[
+                  rowData => ({
+                    icon: 'delete',
+                    tooltip: 'Delete User',
+                    onClick: (event, rowData) => window.confirm("You want to delete " + rowData.name),
+                    disabled: rowData.birthYear < 2000
+                  })
+                ]}
               />
               </div>
         </div>

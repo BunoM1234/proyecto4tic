@@ -133,20 +133,20 @@ function App() {
     setServiceList([...serviceList, { service: "" }]);
   };
 
-  const NotificationBtn = document.querySelector(".buyOrder");
+  // const NotificationBtn = document.querySelector(".buyOrder");
 
-  const requestPermission = function() {
-    if(!("Notification" in Windows))
-      throw new Error("Browser does not support Notification");
+  // const requestPermission = function() {
+  //   if(!("Notification" in Windows))
+  //     throw new Error("Browser does not support Notification");
 
-    Notification.requestPermission().then((permission) => {
-        const notification = new Notification("New", {
-          body: "A new order has been created",
-        });
-    });
-  };
+  //   Notification.requestPermission().then((permission) => {
+  //       const notification = new Notification("New", {
+  //         body: "A new order has been created",
+  //       });
+  //   });
+  // };
   
-  
+  // NotificationBtn.addEventListener("click", requestPermission);
 
   return (
     <div className="completeDiv">
@@ -219,7 +219,6 @@ function App() {
                   onClick={handleServiceAdd}
                   className="add-btn"
                   variant = "primary"
-                  onClick={NotificationBtn}  
                 >
                   <span>Add a Service</span>
                 </Button>
@@ -241,10 +240,10 @@ function App() {
         <Button
           type="sumbit"
           variant="primary"
-          class="buyOrder"
+          className="buyOrder"
         >
           <span class="text">Add to buy order</span>
-          <i class="ri-check-line icon"></i>
+          
         </Button>
       </div>
     </div>
