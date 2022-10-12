@@ -12,6 +12,8 @@ import React from 'react';
  } from 'react-router-dom';
  import { FaFilter } from "react-icons/fa"
  import {AiFillNotification} from "react-icons/ai"
+ import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
 
 
 
@@ -193,6 +195,22 @@ function App() {
                 required
                 placeholder="BOM"
               />
+              <Autocomplete 
+                className='autoCompleteBoard'
+                disablePortal
+                id="combo-box-demo"
+                options={[
+                  {label: 1},
+                  {label: 2},
+                  {label: 3},
+                  {label: 4},
+                ]}
+                option={{
+                  backgroundColor: '#EEE',
+                }}
+                sx={{ width: 300 }}
+                renderInput={(params) => <TextField {...params} label="Movie" />}
+/>
               <input
                 name="quantity"
                 type="number"

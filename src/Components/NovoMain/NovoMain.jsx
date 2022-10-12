@@ -10,6 +10,9 @@ import {
   import Button from 'react-bootstrap/Button';
   import Img2 from '../Novo/novo-logo.png';
   import Img5 from './SBC002AV.2824187d.png';
+  import MenuButton from '../MenuButton/MenuButton';
+  import MenuItem from "@material-ui/core/MenuItem";
+  import Menu from "@material-ui/core/Menu";
   
 
 function NovoMain() {
@@ -18,19 +21,15 @@ function NovoMain() {
     return(
 
   <div className="completeDiv5">
-       <header className="DarkBar" id="DarkBar">
+  <header className="DarkBar" id="DarkBar">
       <Link to="/main">
         <img className="Imagen2"
           src={Img2}
           alt="Imagen"
         />
       </Link>
-      <Link to ="/">
-        <Button className="outBtn" variant="primary">
-          Log Out
-        </Button>
-        </Link>
-       </header>
+    <MenuButton className="menuBtn"/>
+  </header>
     <Link to="/home">
     
       <div className="cardDiv">
@@ -103,11 +102,8 @@ function NovoMain() {
      
         </div>
         </Link>
-      </div>
-
-      
+      </div>  
     )
-
 }
 
 export default NovoMain;

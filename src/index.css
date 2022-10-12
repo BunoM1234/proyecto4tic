@@ -433,6 +433,12 @@ h2
   right: 0%;
 }
 
+.menuBtn
+{
+  position: absolute;
+  right: 90%;
+}
+
 /* .services {
   display: flex;
   justify-content: center;
