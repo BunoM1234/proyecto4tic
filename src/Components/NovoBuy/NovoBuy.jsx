@@ -96,7 +96,8 @@ import React from "react";
    //import Table from 'react-bootstrap/Table';
    import { FaFileCsv } from "react-icons/fa";
    import MaterialTable from 'material-table';
-   import tableIcons from '../tableIcons/tableIcons'
+   import tableIcons from '../tableIcons/tableIcons';
+   import HeaderBar from "../NavBar/NBHeader";
    
 
 
@@ -105,19 +106,7 @@ import React from "react";
   
     return (
       <div className ="completeDiv2">
-         <header className="DarkBar" id="DarkBar">
-             <Link to="/main">
-                 <img className="Imagen2"
-                     src={Img2}
-                     alt="Imagen"
-                 />
-             </Link>
-             <Link to ="/">
-                 <Button className="outBtn" variant="primary">
-                     Log Out
-                 </Button>
-             </Link>
-        </header>
+         <HeaderBar className="navBar"/>
             <div className="NovoTableDiv">
               <MaterialTable 
                 className = "NovoTable"
@@ -143,7 +132,7 @@ import React from "react";
                 }}}
                 actions={[
                   rowData => ({
-                    icon: 'delete',
+                    icon: 'Delete',
                     tooltip: 'Delete User',
                     onClick: (event, rowData) => window.confirm("You want to delete " + rowData.name),
                     disabled: rowData.birthYear < 2000

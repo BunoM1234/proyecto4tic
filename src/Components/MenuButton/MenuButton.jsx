@@ -16,6 +16,11 @@ function MenuButton() {
     const handleClick = (event) => {
       setAnchorEl(event.currentTarget);
     };
+
+    const handleClickLogOut = (event) => 
+    {
+      window.location.replace('/')
+    }
     return(
         <div
       style={{
@@ -40,8 +45,7 @@ function MenuButton() {
       >
         <MenuItem onClick={handleClose}>My Account</MenuItem>
         <MenuItem onClick={handleClose}>Settings</MenuItem>
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem onClick={handleClickLogOut}>Logout</MenuItem>
       </Menu>
     </div>
     );

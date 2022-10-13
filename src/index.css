@@ -33,10 +33,13 @@ body
 .DarkBar
 {
   background-color: rgb(37, 1, 61);
-  width: 100%;
+  max-width: 100vw;
+  width: 100vw;
   height: 70px;
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
 }
 
 .TitleLogIn
@@ -302,19 +305,6 @@ h2
   margin-right: 20px;
 }
 
-
-.iconCSV
-{
-  width: 20px;
-  height: 20px;
-  margin-left: 5px;
-}
-
-.csvBtn
-{
-  margin-left: 1000px;
-}
-
 .flip-card-back
 {
   padding: 20%;
@@ -339,11 +329,16 @@ h2
 
 .completeDiv2
 {
-  width: 100%;
-  min-height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
   background-color: rgb(151, 157, 240);
-  
-  
+  display: flex;
+}
+
+.navBar
+{
+  position: absolute;
+  width: 100vw;
 }
 
 .filterBtn

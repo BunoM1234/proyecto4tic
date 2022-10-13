@@ -14,6 +14,7 @@ import React from 'react';
  import {AiFillNotification} from "react-icons/ai"
  import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
+import HeaderBar from "../NavBar/NBHeader";
 
 
 
@@ -152,20 +153,7 @@ function App() {
 
   return (
     <div className="completeDiv">
-      <header className="DarkBar" id="DarkBar">
-      <Link to="/main">
-        <img className="Imagen2"
-          src={Img2}
-          alt="Imagen"
-        />
-            
-      </Link>
-      <Link to ="/">
-        <Button className="outBtn" variant="primary">
-          Log Out
-        </Button>
-        </Link>
-      </header>
+     <HeaderBar/>
     <form className="App" autoComplete="off">
     <div className="gradient">
       <div className="form-field">

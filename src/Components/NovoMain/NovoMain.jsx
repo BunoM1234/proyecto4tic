@@ -13,6 +13,7 @@ import {
   import MenuButton from '../MenuButton/MenuButton';
   import MenuItem from "@material-ui/core/MenuItem";
   import Menu from "@material-ui/core/Menu";
+  import HeaderBar from "../NavBar/NBHeader";
   
 
 function NovoMain() {
@@ -21,15 +22,7 @@ function NovoMain() {
     return(
 
   <div className="completeDiv5">
-  <header className="DarkBar" id="DarkBar">
-      <Link to="/main">
-        <img className="Imagen2"
-          src={Img2}
-          alt="Imagen"
-        />
-      </Link>
-    <MenuButton className="menuBtn"/>
-  </header>
+    <HeaderBar/>
     <Link to="/home">
     
       <div className="cardDiv">
