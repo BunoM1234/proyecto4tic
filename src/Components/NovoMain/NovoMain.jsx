@@ -8,7 +8,7 @@ import {
   } from 'react-router-dom';
   import Img4 from './testing-kit.5a620275.png';
   import Button from 'react-bootstrap/Button';
-  import Img2 from '../Novo/novo-logo.png';
+  
   import Img5 from './SBC002AV.2824187d.png';
   import MenuButton from '../MenuButton/MenuButton';
   import MenuItem from "@material-ui/core/MenuItem";
