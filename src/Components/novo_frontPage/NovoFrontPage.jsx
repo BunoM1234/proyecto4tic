@@ -164,29 +164,13 @@ function App() {
       </Button>
       </div>
         {serviceList.map((singleService, index) => (
-          <div key={index} className="services">
+          <div key={index} className="services" align="center">
             <div className="first-division">
-              <input
-                name="service"
-                type="text"
-                id="service"
-                value={singleService.service}
-                onChange={(e) => handleServiceChange(e, index)}
-                placeholder="Board"
-                required
-              />
-              <input
-                name="BOM"
-                type="text"
-                id="BOM"
-                className="BOM"
-                required
-                placeholder="BOM"
-              />
+              
               <Autocomplete 
                 className='autoCompleteBoard'
                 disablePortal
-                id="combo-box-demo"
+                id="board-autocomplete"
                 options={[
                   {label: 1},
                   {label: 2},
@@ -194,19 +178,42 @@ function App() {
                   {label: 4},
                 ]}
                 option={{
-                  backgroundColor: '#EEE',
+                  backgroundColor: '#FFFFFF',
                 }}
                 sx={{ width: 300 }}
-                renderInput={(params) => <TextField {...params} label="Movie" />}
+                renderInput={(params) => <TextField {...params} label="Board" />}
 />
-              <input
-                name="quantity"
-                type="number"
-                id="quantity"
-                className="quantity"
-                required
-                placeholder="Quantity"
-              />
+              
+              <Autocomplete 
+                className='autoCompleteBoard'
+                disablePortal
+                id="bom-autocomplete"
+                options={[
+                  {label: 1},
+                  {label: 2},
+                  {label: 3},
+                  {label: 4},
+                ]}
+                sx={{ width: 300 }}
+                renderInput={(params) => <TextField {...params} label="BOM" />}
+/>
+
+              <Autocomplete 
+                className='autoCompleteBoard'
+                disablePortal
+                id="quantity-autocomplete"
+                options={[
+                  {label: 1},
+                  {label: 2},
+                  {label: 3},
+                  {label: 4},
+                ]}
+                option={{
+                  backgroundColor: '#FFFFFF',
+                }}
+                sx={{ width: 300 }}
+                renderInput={(params) => <TextField {...params} label="Quantity" />}
+/>
               {serviceList.length !== 1 && (
                 <button
                   type="button"
@@ -235,14 +242,7 @@ function App() {
         ))}
       </div>
       <div className="makeOrder">
-      <input
-          name="name"
-          type=""
-          id="name"
-          className="name"
-          required
-          placeholder="Order name"
-        />
+      
         <Button
           type="sumbit"
           variant="primary"
