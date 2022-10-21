@@ -11,7 +11,7 @@ import Img2 from '../Novo/novo-logo.png';
 
 function HeaderBar() {
     return(
-        <div align="center">
+        <div align="center" className="headerBar">
             <header className="DarkBar" id="DarkBar">
                 <Link to="/main">
                     <img className="Imagen2"
@@ -25,7 +25,7 @@ function HeaderBar() {
                 <Link to="/home">
                     Create orders
                 </Link>
-                <MenuButton className="menuBtn"/>
+                <MenuButton className="menuBtn" align="right"/>
             </header>
         </div>
     );
