@@ -20,82 +20,35 @@ function NovoMain() {
 
 
     return(
-
-  <div className="completeDiv5">
+<>
     <HeaderBar/>
+  <div className="completeDiv5">
     <Link to="/home">
     
-      <div className="cardDiv">
-       <div className="card">
-          <div class="flip-card-back">
-            <h1>
-              Continue
-            </h1>
-            <h6 className = "ordersTxt">
-              You have 0 uncompleted orders
-            </h6>
-          </div>
-    
-         
-          <div class="image_container">
+      <div className="Card1">
+        <div class="image_container">
             <img className="Imagen4"
             src={Img4}
             alt="Imagen4"
           />
-          </div>
-        
-        
-          <div class="text_back">
-            <div>
-              <h1 className="h1TxtBack">Begin</h1>
-              <p>
-                Start a new order. Select board/s, BOMs, quantity and name of the order.
-              </p>
-              <span nameClass ="span1">See more</span>
-            </div>
-          </div>
-         
+          <h1>Begin Order</h1>
+          <h5>Start a new order (choose a board, a BOM and quantity.</h5>
         </div>
-     
-        </div>
+      </div>
         </Link>
 
     <Link to="/orders">
-      <div className="cardDiv2">
-       <div className="card">
-          <div class="flip-card-back">
-            <h1>
-              Continue
-            </h1>
-            <h6 className = "ordersTxt">
-              You have 0 pending orders
-            </h6>
-          </div>
-    
-         
-          <div class="image_container">
-            <img className="Imagen4"
-            src={Img5}
-            alt="Imagen4"
-          />
-          </div>
-        
-        
-          <div class="text_back">
-            <div>
-              <h1 className="h1TxtBack">Orders</h1>
-              <p>
-                See your pending orders. 
-              </p>
-              <span nameClass ="span1">See more</span>
-            </div>
-          </div>
-         
-        </div>
-     
-        </div>
-        </Link>
+      <div className="Card2">
+        <img className="Imagen4"
+          src={Img5}
+          alt="Imagen4"
+        />
+        <h1>Pending Orders</h1>
+        <h5>See your diferent pending orders.</h5>
+      </div>
+      </Link>
       </div>  
+      </>
     )
 }
 
