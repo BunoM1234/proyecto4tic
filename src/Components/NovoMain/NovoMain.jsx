@@ -23,7 +23,7 @@ function NovoMain() {
 <>
     <HeaderBar/>
   <div className="completeDiv5">
-    <Link to="/home">
+    <Link style={{textDecoration: 'none', textAlign: "center"}} to="/home">
     
       <div className="Card1">
         <div class="image_container">
@@ -32,12 +32,12 @@ function NovoMain() {
             alt="Imagen4"
           />
           <h1>Begin Order</h1>
-          <h5>Start a new order (choose a board, a BOM and quantity.</h5>
-        </div>
+          <h5>Choose a board, a BOM and quantity.</h5>
+        </div>  
       </div>
         </Link>
 
-    <Link to="/orders">
+    <Link style={{textDecoration: 'none', textAlign: "center"}} to="/orders">
       <div className="Card2">
         <img className="Imagen4"
           src={Img5}

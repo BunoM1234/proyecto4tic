@@ -108,20 +108,20 @@ import React from "react";
       <div className ="completeDiv2">
          <HeaderBar className="navBar"/>
             <div className="NovoTableDiv">
-              <MaterialTable 
+              <MaterialTable
                 className = "NovoTable"
                 title="Parts table"
                 icons={tableIcons}
                 columns={[
-                    { title: "Board", field: "board"},
+                    { title: "Part", field: "part"},
                     { title: "Code", field: "code"},
                     { title: "Quantity", field: "quantity", type: "numeric"},
                     { title: "Stock", field: "stock"},
                     { title: "Price", field: "price", type: "numeric"},
                 ]}
                 data={[
-                    { board: 'PCB_B', code: '12356', quantity: 4, stock: 'No', price: 40 },
-                    { board: 'PCB_A', code: '123', quantity: 3, stock: 'Yes', price: 35 },
+                    { part: 'PCB_B', code: '12356', quantity: 4, stock: 'No', price: 40 },
+                    { part: 'PCB_A', code: '123', quantity: 3, stock: 'Yes', price: 35 },
                 ]}
                 options={{
                     exportButton: true,
@@ -131,12 +131,17 @@ import React from "react";
                     actionsColumnIndex: -1,
                 }}}
                 actions={[
-                  rowData => ({
-                    icon: 'Delete',
-                    tooltip: 'Delete User',
-                    onClick: (event, rowData) => window.confirm("You want to delete " + rowData.name),
-                    disabled: rowData.birthYear < 2000
-                  })
+                  // rowData => ({
+                  //   icon: 'delete',
+                  //   tooltip: 'Delete User',
+                  //   onClick: (event, rowData) => window.confirm("You want to delete " + rowData.name),
+                  //   disabled: rowData.birthYear < 2000
+                  // })
+                  {
+                    tooltip: 'Remove',
+                    icon: 'delete',
+                    onClick: (evt, data) => alert("aaa")
+                  }
                 ]}
               />
               </div>
