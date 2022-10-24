@@ -108,20 +108,20 @@ import React from "react";
       <div className ="completeDiv2">
          <HeaderBar className="navBar"/>
             <div className="NovoTableDiv">
-              <MaterialTable 
+              <MaterialTable
                 className = "NovoTable"
                 title="Parts table"
                 icons={tableIcons}
                 columns={[
-                    { title: "Board", field: "board"},
+                    { title: "Part", field: "part"},
                     { title: "Code", field: "code"},
                     { title: "Quantity", field: "quantity", type: "numeric"},
                     { title: "Stock", field: "stock"},
                     { title: "Price", field: "price", type: "numeric"},
                 ]}
                 data={[
-                    { board: 'PCB_B', code: '12356', quantity: 4, stock: 'No', price: 40 },
-                    { board: 'PCB_A', code: '123', quantity: 3, stock: 'Yes', price: 35 },
+                    { part: 'PCB_B', code: '12356', quantity: 4, stock: 'No', price: 40 },
+                    { part: 'PCB_A', code: '123', quantity: 3, stock: 'Yes', price: 35 },
                 ]}
                 options={{
                     exportButton: true,

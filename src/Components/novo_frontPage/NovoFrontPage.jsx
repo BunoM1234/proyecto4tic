@@ -154,7 +154,7 @@ function App() {
   return (
     <div className="completeDiv">
      <HeaderBar/>
-    <form className="App" autoComplete="off">
+    <form className="OrderForm" autoComplete="off">
     <div className="gradient">
       <div className="form-field">
       <div className="filterDiv">

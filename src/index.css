@@ -32,9 +32,10 @@ body
 
 .DarkBar
 {
+  display: flex;
+  flex: 1 1;
   background-color: rgb(37, 1, 61);
   max-width: 100vw;
-  width: 100vw;
   height: 9vh;
   position: fixed;
   top: 0;
@@ -45,9 +46,16 @@ body
 .completeDiv5
 {
   display: flex;
+  gap: 2.5%;
   align-items: center;
   justify-content: center;
-
+  margin-top: 9vh;
+  /*min-height: 100Vh;
+  max-width: 100vw; */
+}
+.completeDiv5>* {
+  min-width: 25vw;
+  margin: .25em;
 }
 
 
@@ -87,6 +95,7 @@ body
 
 .form-field
 {
+  width: fit-content;
   background-color: rgb(236, 236, 236);
   padding: 50px;
   border-radius: 10px;
@@ -101,7 +110,7 @@ body
 }
 
 .gradient {
-  max-width: 55vw;
+  max-width: 100vw;
 }
 .BOM
 {
@@ -214,7 +223,7 @@ p
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
-  
+  filter: drop-shadow(8px 8px 4px rgb(75, 73, 73));
 }
 
 .card:hover {
@@ -363,14 +372,10 @@ h2
   flex-direction: column;
 }
 
-.second-division
+ .first-division
 {
-  width: 20%;
-}
-
-.first-division
-{
-  width: fit-content;
+  display: flex;
+  flex-direction: row;
 }
 
 .completeDiv2
@@ -412,21 +417,14 @@ h2
 
 }
 
-.cardDiv2
-{  
-  position: static;
-}
 
 .Card1{
-  
-  outline: 2px solid #1f1070;
-
+  border-radius:10px;
 }
 
-.Card2{
 
-  outline: 2px solid #1f1070;
-  
+.Card2{
+  border-radius:10px;
 }
 
 
