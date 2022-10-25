@@ -8,11 +8,12 @@ import {
 } from 'react-router-dom';
 import MenuButton from '../MenuButton/MenuButton';
 import Img2 from '../Novo/novo-logo.png';
+import Button from 'react-bootstrap/Button';
 
 function HeaderBar() {
     return(
         <div align="center" className="headerBar">
-            <header className="DarkBar" id="DarkBar">
+            {/* <header className="DarkBar" id="DarkBar">
                 <Link to="/main">
                     <img className="Imagen2"
                         src={Img2}
@@ -26,7 +27,39 @@ function HeaderBar() {
                     Create orders
                 </Link>
                 <MenuButton className="menuBtn" align="right"/>
-            </header>
+            </header> */}
+            
+
+
+<nav class="navbar navbar-expand-lg bg-dark fixed-top ml-auto" name="navbar">
+  <div class="container-fluid ml-auto">
+    <Link to="/main">
+        <img className="Imagen2"
+          src={Img2}
+          alt="Imagen"
+        />
+    </Link>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+      <ul class="ml-auto navbar-nav">
+        <Link to="/home">
+            <a class="nav-link active" aria-current="page">
+                Make Order/s
+            </a>
+        </Link>
+        <Link to="/orders">
+            <a class="nav-link active" aria-current="page" id="toSeeOrders">
+                See Order/s
+            </a>
+        </Link>
+        <Link to="/">
+            <Button>
+                Log out
+            </Button>
+        </Link>
+      </ul>
+    </div>
+  </div>
+</nav>
         </div>
     );
 };

@@ -1,0 +1,20 @@
+.nav-link {
+    color: blue;
+}
+
+.navbarNavDropdown
+{
+    justify-content: center;
+}
+
+.navbar
+{
+    background-color: lightgreen;
+}
+
+#toSeeOrders
+{
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+}

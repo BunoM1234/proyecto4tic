@@ -23,8 +23,7 @@ function NovoMain() {
 <>
     <HeaderBar/>
   <div className="completeDiv5">
-    <Link style={{textDecoration: 'none', textAlign: "center"}} to="/home">
-    
+    <Link style={{textDecoration: 'none', textAlign: "center", boxShadow: "5px grey"}} to="/home">
       <div className="Card1">
         <div class="image_container">
             <img className="Imagen4"

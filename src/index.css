@@ -24,10 +24,11 @@ body
 .Imagen2
 {
   width: 20vw;
-  height: 6.6vh;
+  height: 6.1vh;
   margin-top: 10px;
-  margin-left: 140px;
+  padding-right: 40px;
   float: left;
+  padding-left: 10px;
 }
 
 .DarkBar
@@ -416,6 +417,10 @@ h2
 
 .Card1{
   border-radius:10px;
+  transition: .2s all ease;
+}
+.Card1:hover{
+  box-shadow: 5px solid grey;
 }
 
 
