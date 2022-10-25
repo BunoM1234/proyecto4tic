@@ -41,16 +41,6 @@ function HeaderBar() {
     </Link>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
       <ul class="ml-auto navbar-nav">
-        <Link to="/home">
-            <a class="nav-link active" aria-current="page">
-                Make Order/s
-            </a>
-        </Link>
-        <Link to="/orders">
-            <a class="nav-link active" aria-current="page" id="toSeeOrders">
-                See Order/s
-            </a>
-        </Link>
         <Link to="/">
             <Button>
                 Log out

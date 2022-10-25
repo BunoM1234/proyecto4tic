@@ -35,7 +35,7 @@ body
 {
   display: flex;
   flex: 1 1;
-  background-color: rgb(37, 1, 61);
+  background-color: rgb(41, 41, 41);
   max-width: 100vw;
   height: 9vh;
   position: fixed;
@@ -141,7 +141,7 @@ body
 {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(-45deg, #1c0edd, #768fe0, #afadb9, #ffffff, #7d71e2);
+  background: linear-gradient(-45deg, #000000, #686868, #aaaaaa, #ffffff, #e0e0e0);
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
 }
@@ -339,7 +339,7 @@ h2
 {
   max-width: 100vw;
   max-height: 100vh;
-  background-color: rgb(151, 157, 240);
+  background-color: rgb(104, 103, 103);
   display: flex;
 }
 
