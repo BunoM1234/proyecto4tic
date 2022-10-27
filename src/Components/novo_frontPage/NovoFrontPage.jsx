@@ -1,5 +1,4 @@
 import React from 'react';
-
  import Img2 from '../Novo/novo-logo.png';
  import Button from 'react-bootstrap/Button';
  import DeleteIcon from './1345874.png'
@@ -15,104 +14,9 @@ import React from 'react';
  import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import HeaderBar from "../NavBar/NBHeader";
-
-
-
-// function NovoFrontPage() {
-//   const [serviceList, setServiceList] = useState([
-//     {service: ""}
-//   ]);
-  
-//   const handleServiceAdd = () => {
-//          setServiceList([...setServiceList, {service: ""}])
-//         }
-      
-//   const handleserviceRemove = () => {
-//          const list= [...serviceList]
-//           list.splice(index, 1);
-//           setServiceList(list)
-//         }
-        
-// return(
-//     <form className="novoApp" autoComplete="off">
-//       <div className="DivPrincipal">
-//         <label htmlFor ="service"></label>
-//         {serviceList.map((singleService, index) => (
-//           <div key={index} className = "serviceList">
-//             <div className ="firstDiv">
-//               <input className = "service" type="text" id="service" required/>
-//               {serviceList.length-1 === index && serviceList.length <4 && 
-//                 (
-//                 <button type="button" className="añadir"
-//                 onClick={handleServiceAdd}
-//                 >
-//                 <span>Add a service</span>
-//                 </button>
-//                 )}
-//             </div>
-//             <div className="secondDiv">
-//               {serviceList.length > 1 && (
-//               <button type="button" className="borrar"
-//                 onClick={() => handleserviceRemove(index)}
-//               >
-//                 <span>Remove</span>
-//               </button>
-//             )}
-//           </div>
-//         </div>
-//         ))}
-//       </div>
-//     </form>
-//     );
-//   }
-    
-    // <form className = "form-home">
-    //   <div>
-    //     <div className="DarkBar" id="DarkBar">
-    //       <img className="Imagen2"
-    //         src={Img2}
-    //         alt="Imagen"
-    //       />
-    //       <Link to="/">
-    //         <Button type="button" className = "outBtn" variant = "danger">
-    //           Log Out
-    //         </Button>{''}
-    //       </Link>
-    //     </div>
-    //       <div className="pageContent">
-    //         <div className ="pcLine1" align = "center">
-    //           <input type="text" variant className="partInput1"></input>
-    //           <input type="text" variant className="partsInput1"></input>
-    //           <input type="number" variant className="quantityInput1"></input>
-    //           <Button variant="danger">Delete</Button>
-    //         </div>
-    //         <div className ="pcLine2" align="center">
-    //           <input type="text" variant className="partInput2"></input>
-    //           <input type="text" variant className="partsInput2"></input>
-    //           <input type="number" variant className="quantityInput2"></input>
-    //           <Button variant="danger">Delete</Button>
-    //         </div>
-    //         <div className="pcLine3" align="center">
-    //           <p>Placa:</p>
-    //           <input type="text" variant className="partInput3"></input>
-    //           <input type="text" variant className="partsInput3"></input>
-    //           <input type="number" variant className="quantityInput3"></input>
-    //           <Button variant="danger">Delete</Button>
-    //         <div className="btnDiv" align="right">
-    //           <Button variant="primary">OK</Button>
-    //         </div>
-    //       </div>
-    //       </div>
-    //   </div>
-    // </form>
-
-
-  // )};
-
-  //export default NovoFrontPage;
-
-import { useState } from "react";
 import { Windows } from 'css.gg';
+import { useEffect, useState } from "react";
+import axios from 'axios';
 
 
 
@@ -136,20 +40,31 @@ function App() {
     setServiceList([...serviceList, { service: "" }]);
   };
 
-  // const NotificationBtn = document.querySelector(".buyOrder");
+  function FetchBoardFunction()
+  {
+    const [boards, setBoards] = useState()
+    const [loading, setLoading] = useState(false)
+    const [searchTitle, setSearchTitle] = useState("")
 
-  // const requestPermission = function() {
-  //   if(!("Notification" in Windows))
-  //     throw new Error("Browser does not support Notification");
+    useEffect(()=>{
+      const loadBoard = async() => {
+        setLoading(true);
+        const response = await axios.get("http://lcoalhost:8000/NovoApi_APP/boards");
+        setBoards(response.data);
+        setLoading(false);
+      }
 
-  //   Notification.requestPermission().then((permission) => {
-  //       const notification = new Notification("New", {
-  //         body: "A new order has been created",
-  //       });
-  //   });
-  // };
+      loadBoard();
+        //fetch("http://lcoalhost:8000/NovoApi_APP/boards").then(res => res.json).then(data => setBoards(data))
+      }, [])
+  }
   
-  // NotificationBtn.addEventListener("click", requestPermission);
+
+  // Como sacar info de la api
+  // const [boms, setBoms] = useState()
+  // useEffect(()=>{
+  //   fetch("http://lcoalhost:8000/NovoApi_APP/boms").then(res => res.json).then(data => setBoms(data))
+  // }, [])
 
   return (
     <div className="completeDiv">
@@ -158,10 +73,6 @@ function App() {
     <div className="gradient">
       <div className="form-field">
       <div className="filterDiv">
-      <Button className= "filterBtn">
-              <span>Filter</span>
-              <FaFilter />
-      </Button>
       </div>
         {serviceList.map((singleService, index) => (
           <div key={index} className="services" align="center">
@@ -196,6 +107,7 @@ function App() {
                 ]}
                 sx={{ width: 300 }}
                 renderInput={(params) => <TextField {...params} label="BOM" />}
+                onInput={FetchBoardFunction}
 />
 
               <Autocomplete 
