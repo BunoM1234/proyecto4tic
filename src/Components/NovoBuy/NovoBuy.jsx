@@ -140,7 +140,7 @@ import React from "react";
                   {
                     tooltip: 'Remove',
                     icon: 'delete',
-                    onClick: (evt, data) => alert("aaa")
+                    onClick: (evt, data) => alert("Deleted row")
                   }
                 ]}
               />

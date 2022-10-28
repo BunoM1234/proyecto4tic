@@ -23,26 +23,26 @@ function NovoMain() {
 <>
     <HeaderBar/>
   <div className="completeDiv5">
-    <Link style={{textDecoration: 'none', textAlign: "center", boxShadow: "5px grey"}} to="/home">
-      <div className="Card1">
+    <Link style={{textDecoration: 'none', textAlign: "center"}} to="/home">
+      <div className="Card1 Link">
         <div class="image_container">
             <img className="Imagen4"
             src={Img4}
             alt="Imagen4"
           />
-          <h1>Begin Order</h1>
+          <h1 className="titleCard">Begin Order</h1>
           <h5>Choose a board, a BOM and quantity.</h5>
         </div>  
       </div>
         </Link>
 
     <Link style={{textDecoration: 'none', textAlign: "center"}} to="/orders">
-      <div className="Card2">
+      <div className="Card2 Link">
         <img className="Imagen4"
           src={Img5}
           alt="Imagen4"
         />
-        <h1>Pending Orders</h1>
+        <h1 className="titleCard">Pending Orders</h1>
         <h5>See your diferent pending orders.</h5>
       </div>
       </Link>
