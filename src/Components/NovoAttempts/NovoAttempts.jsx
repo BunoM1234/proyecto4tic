@@ -40,16 +40,16 @@ function App() {
   const [boms, setBoms] = useState();
 
   useEffect(() =>  {
-    fetch("http://127.0.0.1:8000/NovoApi_APP/boms/1", {
+    fetch("http://127.0.0.1:8000/NovoApi_APP/boms", {
       mode: 'no-cors'
     }).then((boms) => {
       console.log(boms)
-      boms.json().then((response) => {
-        if(response != null){
-          setBoms(response)
-        }
-      });
-    });
+      boms.json()
+    }).then((response) => {
+      //setBoms(response)
+      console.log(response)
+    }).catch(e => console.log(e));
+    
   }, []);
 
   return (
