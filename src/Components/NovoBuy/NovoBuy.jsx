@@ -125,24 +125,10 @@ import React from "react";
                 ]}
                 options={{
                     exportButton: true,
-                    selection: true,
                     headerStyle: {
                         backgroundColor: '#EEE',
                     actionsColumnIndex: -1,
                 }}}
-                actions={[
-                  // rowData => ({
-                  //   icon: 'delete',
-                  //   tooltip: 'Delete User',
-                  //   onClick: (event, rowData) => window.confirm("You want to delete " + rowData.name),
-                  //   disabled: rowData.birthYear < 2000
-                  // })
-                  {
-                    tooltip: 'Remove',
-                    icon: 'delete',
-                    onClick: (evt, data) => alert("Deleted row")
-                  }
-                ]}
               />
               </div>
               
