@@ -98,10 +98,12 @@ import React from "react";
    import MaterialTable from 'material-table';
    import tableIcons from '../tableIcons/tableIcons';
    import HeaderBar from "../NavBar/NBHeader";
+   import axios from 'axios';
+   import  { Component } from 'react'
 
 
+   
    const NovoBuy = () => {
-  
     return (
       <div className ="completeDiv2">
          <HeaderBar className="navBar"/>

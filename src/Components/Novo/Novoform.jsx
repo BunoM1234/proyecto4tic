@@ -11,17 +11,12 @@ import {
 import {React} from 'react';
 import Button from 'react-bootstrap/Button';
 import NovoMain from '../NovoMain/NovoMain';
+import HeaderBar from "../NavBar/NBHeader";
 
 const Novoform = () => {
   return (
     <div className = "completeDiv1"> 
-      <header className="DarkBar" id="DarkBar">
-        <img className="Imagen2"
-          src={Img2}
-          alt="Imagen"
-        />
-      </header>
-      
+    <HeaderBar/>
     <div className = "form1DIV">
       <form className="Form1" onSubmit={ev => {
         ev.preventDefault();
@@ -31,6 +26,7 @@ const Novoform = () => {
       
         login(inputUser, inputPass);
       }}>
+        <div className="loginDiv">
         <div id="Titulo" className="Tituloform">
           <h1 className="TitleLogIn" style={{fontFamily: 'helvetica'}}>
             LOG IN
@@ -47,6 +43,7 @@ const Novoform = () => {
             <Button type="sumbit" className = "homeBtn" variant = "primary">
               Sumbit
             </Button>{''}
+        </div>
       </form>
     </div>
     <div allign="right" >

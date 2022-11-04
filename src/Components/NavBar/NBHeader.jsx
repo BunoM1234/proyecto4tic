@@ -19,13 +19,6 @@ function HeaderBar() {
                         alt="Imagen"
                     />
                 </Link>
-                <Link to="/orders">
-                    Go to orders
-                </Link>
-                <Link to="/home">
-                    Create orders
-                </Link>
-                <MenuButton className="menuBtn" align="right"/>
             </header>
         </div>
     );
