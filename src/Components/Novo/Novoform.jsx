@@ -21,14 +21,7 @@ const Novoform = () => {
           alt="Imagen"
         />
       </header>
-      <div allign="right" >
-        <img className="Imagen1"
-          src={Img1}
-          alt="Imagen"
-          width="550"
-          height="550"
-        />
-      </div>
+      
     <div className = "form1DIV">
       <form className="Form1" onSubmit={ev => {
         ev.preventDefault();
@@ -56,6 +49,14 @@ const Novoform = () => {
             </Button>{''}
       </form>
     </div>
+    <div allign="right" >
+        <img className="Imagen1"
+          src={Img1}
+          alt="Imagen"
+          width="550"
+          height="550"
+        />
+      </div>
   </div>
   )
 };
