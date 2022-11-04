@@ -2,18 +2,25 @@ body
 {
   font-family: sans-serif
 }
-.Imagen1
-{
+
+.Imagen1{
+  width: 90%;
+  height: 30%;
+  border-radius: 5px 5px 0px 0px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
   float: right;
 }
 
-.Form1
+/* .Form1
 {
   margin-left: 100px;
   margin-top: 120px;
   width: 20vw;
   margin-bottom: 40px;
-}
+} */
 
 .Tituloform
 {
@@ -58,6 +65,20 @@ body
   margin: .25em;
 }
 
+.completeDiv1
+{
+  display: flex;
+  gap: 2.5%;
+  align-items: center;
+  justify-content: center;
+  min-height: 100Vh;
+  max-width: 100vw;
+  height: 90vh;
+}
+.completeDiv1>* {
+  min-width: 25vw;
+  margin: .25em;
+}
 
 .headerBar
 { 
@@ -296,18 +317,6 @@ h2
   margin-bottom: 50px;
 }
 
-.form1DIV
-{
-  margin-left: 60px;
-  margin-top: 120px;
-  padding: 6px;
-  outline: 2px solid #2d10d1;
-  width: 40vw;
-  height: 60vh;
-  border-radius: 4px;
-  box-shadow: 8px 8px 4px rgb(190, 190, 190);
-}
-
 .name{
   margin-right: 20px;
 }
@@ -455,6 +464,28 @@ h2
   display: flex;
   max-width: 100vw;
 }
+
+.Form1DIV{
+  border-radius:10px;
+  transition: .2s all ease;
+  width: 45vw;
+  height: 70vh;
+  outline: 2px solid #2d10d1;
+  border-radius: 4px;
+  box-shadow: 8px 8px 4px rgb(190, 190, 190);
+}
+
+/* .form1DIV
+{
+  margin-left: 60px;
+  margin-top: 120px;
+  padding: 6px;
+  outline: 2px solid #2d10d1;
+  width: 40vw;
+  height: 60vh;
+  border-radius: 4px;
+  box-shadow: 8px 8px 4px rgb(190, 190, 190);
+} */
 
 /* .services {
   display: flex;
