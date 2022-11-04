@@ -98,8 +98,6 @@ import React from "react";
    import MaterialTable from 'material-table';
    import tableIcons from '../tableIcons/tableIcons';
    import HeaderBar from "../NavBar/NBHeader";
-   
-
 
 
    const NovoBuy = () => {

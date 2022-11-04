@@ -17,6 +17,7 @@ import { Windows } from 'css.gg';
 import { useEffect, useState } from "react";
 import axios from 'axios';
 import ReactDOM from "react-dom";
+import  { Component } from 'react'
 
 //  function NovoAttempts()
 //  {
@@ -36,40 +37,26 @@ import ReactDOM from "react-dom";
 //        //fetch("http://lcoalhost:8000/NovoApi_APP/boards").then(res => res.json).then(data => setBoards(data))
 //      }, [])
 
-function App() {
-  const [boms, setBoms] = useState();
-
-  useEffect(() =>  {
-    fetch("http://127.0.0.1:8000/NovoApi_APP/boms", {
-      mode: 'no-cors'
-    }).then((boms) => {
-      console.log(boms)
-      boms.json()
-    }).then((response) => {
-      //setBoms(response)
-      console.log(response)
-    }).catch(e => console.log(e));
-    
-  }, []);
-
-  return (
-    <table boarder="1">
-      <tbody>
-      <tr>
-        <td>boms</td>
-        <td>stock</td>
-      </tr>
-      </tbody>
-      {boms?.map((bom) => {
-        return(
-          <tr>
-            <td>{boms.uuid}</td>
-            <td>{boms.id}</td>
-          </tr>
+class Article extends Component {
+    state={
+        dataS:[]
+    }
+    componentDidMount(){
+        axios.get('http://127.0.0.1:8000/NovoApi_APP/boms/')
+        .then(res =>{
+            this.setState({
+                dataS:res.data
+            })
+            console.log(res.data);
+        })
+    }
+    render() {
+        return (
+            <div>
+                Hey Ujjwal ! All Ok 
+            </div>
         )
-      })}
-    </table>
-  );
+    }
 }
 
-export default App;
+export default Article
