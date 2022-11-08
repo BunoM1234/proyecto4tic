@@ -41,8 +41,14 @@ class Article extends Component {
     state={
         dataS:[]
     }
+
     componentDidMount(){
-        axios.get('http://127.0.0.1:8000/NovoApi_APP/boms/')
+        axios.get(
+            'http://127.0.0.1:8000/NovoApi_APP/manufacturers/', 
+            'http://127.0.0.1:8000/NovoApi_APP/boards/', 
+            'http://127.0.0.1:8000/NovoApi_APP/boms/',
+            'http://127.0.0.1:8000/NovoApi_APP/stock/'
+            )
         .then(res =>{
             this.setState({
                 dataS:res.data
@@ -50,6 +56,7 @@ class Article extends Component {
             console.log(res.data);
         })
     }
+
     render() {
         return (
             <div>

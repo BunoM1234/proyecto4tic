@@ -99,7 +99,8 @@ import React from "react";
    import tableIcons from '../tableIcons/tableIcons';
    import HeaderBar from "../NavBar/NBHeader";
    import axios from 'axios';
-   import  { Component } from 'react'
+   import  { Component } from 'react';
+   import Article from '../NovoAttempts/NovoAttempts';
 
 
    
@@ -131,7 +132,6 @@ import React from "react";
                 }}}
               />
               </div>
-              
         </div>
     
     );
