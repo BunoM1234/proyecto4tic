@@ -8,6 +8,8 @@ import {
 } from 'react-router-dom';
 import MenuButton from '../MenuButton/MenuButton';
 import Img2 from '../Novo/novo-logo.png';
+import Button from 'react-bootstrap/Button';
+
 
 function HeaderBar() {
     return(
@@ -18,6 +20,11 @@ function HeaderBar() {
                         src={Img2}
                         alt="Imagen"
                     />
+                </Link>
+                <Link to="/">
+                    <Button>
+                        Log out
+                    </Button>
                 </Link>
             </header>
         </div>

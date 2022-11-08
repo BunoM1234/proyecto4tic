@@ -39,19 +39,38 @@ import  { Component } from 'react'
 
 class Article extends Component {
     state={
-        dataS:[]
+        dataS:[],
+        boards:[],
+        boms:[],
+        stock:[]
     }
 
     componentDidMount(){
-        axios.get(
-            'http://127.0.0.1:8000/NovoApi_APP/manufacturers/', 
-            'http://127.0.0.1:8000/NovoApi_APP/boards/', 
-            'http://127.0.0.1:8000/NovoApi_APP/boms/',
-            'http://127.0.0.1:8000/NovoApi_APP/stock/'
-            )
-        .then(res =>{
+        axios.get('http://127.0.0.1:8000/NovoApi_APP/manufacturers/')
+        .then(res => {
             this.setState({
                 dataS:res.data
+            })
+            console.log(res.data);
+        })
+        axios.get('http://127.0.0.1:8000/NovoApi_APP/boards/')
+        .then(res => {
+            this.setState({
+                boards:res.data
+            })
+            console.log(res.data);
+        })
+        axios.get('http://127.0.0.1:8000/NovoApi_APP/boms/1')
+        .then(res => {
+            this.setState({
+                boms:res.data
+            })
+            console.log(res.data);
+        })
+        axios.get('http://127.0.0.1:8000/NovoApi_APP/stock/')
+        .then(res => {
+            this.setState({
+                stock:res.data
             })
             console.log(res.data);
         })
