@@ -38,11 +38,14 @@ import  { Component } from 'react'
 //      }, [])
 
 class Article extends Component {
-    state={
-        dataS:[],
-        boards:[],
-        boms:[],
-        stock:[]
+    constructor() {
+        super();
+        this.state={
+            dataS:[],
+            boards:[],
+            boms:[],
+            stock:[]
+        }
     }
 
     componentDidMount(){
@@ -80,6 +83,8 @@ class Article extends Component {
         return (
             <div>
                 Hey Ujjwal ! All Ok 
+                <p>{ this.state.dataS.manufacturers &&
+                     this.state.dataS.manufacturers[0][1]}</p>
             </div>
         )
     }
