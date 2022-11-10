@@ -85,9 +85,13 @@ class Article extends Component {
                 Hey Ujjwal ! All Ok 
                 <p>{ this.state.dataS.manufacturers &&
                      this.state.dataS.manufacturers[0][1]}</p>
+                <p>{ this.state.stock.stock &&
+                     this.state.stock.stock[0][2]}
+
+                </p>
             </div>
         )
     }
 }
 
-export default Article
+export default Article;

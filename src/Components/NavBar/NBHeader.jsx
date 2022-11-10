@@ -9,6 +9,7 @@ import {
 import MenuButton from '../MenuButton/MenuButton';
 import Img2 from '../Novo/novo-logo.png';
 import Button from 'react-bootstrap/Button';
+import './NavBar.css';
 
 
 function HeaderBar() {
@@ -22,7 +23,7 @@ function HeaderBar() {
                     />
                 </Link>
                 <Link to="/">
-                    <Button>
+                    <Button className="btnLogOut">
                         Log out
                     </Button>
                 </Link>

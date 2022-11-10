@@ -1,6 +1,5 @@
-import Img from './Astronaut suit-rafiki.png'
-import Img1 from './Astronaut_suit.gif'
-import Img2 from './novo-logo.png'
+
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -8,63 +7,71 @@ import {
   Link,
   NavLink
 } from 'react-router-dom';
-import {React} from 'react';
-import Button from 'react-bootstrap/Button';
-import NovoMain from '../NovoMain/NovoMain';
-import HeaderBar from "../NavBar/NBHeader";
+import './NovoForm.css';
+import HeaderBar from '../NavBar/NBHeader';
+import Img2 from './novo-logo.png';
+import { Helmet } from 'react-helmet';
 
-const Novoform = () => {
-  return (
-    <div className = "completeDiv1"> 
-    <HeaderBar/>
-    <div className = "form1DIV">
-      <form className="Form1" onSubmit={ev => {
-        ev.preventDefault();
+export default function (props) {
+  let [authMode, setAuthMode] = useState("signin")
 
-        const inputUser= ev.target.inputUser.value;
-        const inputPass = ev.target.inputPass.value;
-      
-        login(inputUser, inputPass);
-      }}>
-        <div className="loginDiv">
-        <div id="Titulo" className="Tituloform">
-          <h1 className="TitleLogIn" style={{fontFamily: 'helvetica'}}>
-            LOG IN
-          </h1>
+  const changeAuthMode = () => {
+    setAuthMode(authMode === "signin" ? "signup" : "signin")
+  }
+
+  const TITLE = 'Novo Parts';
+
+  if (authMode === "signin") {
+    return ( 
+      <div className="Auth-form-container">
+        <Helmet>
+          <title>{ TITLE }</title>
+        </Helmet>
+        <div align="center" className="headerBar2">
+            <header className="WhiteBar" id="WhiteBar">
+                <Link to="/main">
+                    <img className="Imagen2"
+                        src={Img2}
+                        alt="Imagen"
+                    />
+                </Link>
+            </header>
         </div>
-        <div className="mb-4">
-          <input type="text"id="inputUser" required className="inputUser" placeholder="Enter user"/>
-        </div>
-        <div className="mb-3">
-          <input type="password"className="inputPass" id="inputPass" required placeholder="Enter password"/>
-        </div>  
-        <div className="mb-3 form-check">
-        </div>
-            <Button type="sumbit" className = "homeBtn" variant = "primary">
-              Sumbit
-            </Button>{''}
-        </div>
-      </form>
-    </div>
-    <div allign="right" >
-        <img className="Imagen1"
-          src={Img1}
-          alt="Imagen"
-          width="550"
-          height="550"
-        />
+        <form className="Auth-form">
+          <div className="Auth-form-content">
+            <h3 className="Auth-form-title">Sign In</h3>
+            <div className="text-center">
+              Not registered yet?{" "}
+              <span className="link-primary" onClick={changeAuthMode}>
+                Sign Up
+              </span>
+            </div>
+            <div className="form-group mt-3">
+              <label>Email address</label>
+              <input
+                type="email"
+                className="form-control mt-1"
+                placeholder="Enter email"
+              />
+            </div>
+            <div className="form-group mt-3">
+              <label>Password</label>
+              <input
+                type="password"
+                className="form-control mt-1"
+                placeholder="Enter password"
+              />
+            </div>
+            <div className="d-grid gap-2 mt-3">
+            <Link to="/main">
+              <button type="submit" className="btn btn-primary">
+                Submit
+              </button>
+            </Link>
+            </div>
+          </div>
+        </form>
       </div>
-  </div>
-  )
-};
-
-const login = (inputUser, inputPass) => {
-  if (inputUser === 'benji' && inputPass === 'chej')
-  window.location.replace('/main');
-
-  else
-  alert('login incorrecto')
+    )
+  }
 }
-
-
-export default Novoform;

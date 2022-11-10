@@ -27,28 +27,8 @@ body
   font-family: "Tahoma Black";
 }
 
-.Imagen2
-{
-  width: 20vw;
-  height: 6.1vh;
-  margin-top: 10px;
-  padding-right: 40px;
-  float: left;
-  padding-left: 10px;
-}
 
-.DarkBar
-{
-  display: flex;
-  flex: 1 1;
-  background-color: rgb(41, 41, 41);
-  max-width: 100vw;
-  height: 9vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-}
+
 
 .completeDiv5
 {
@@ -474,6 +454,8 @@ h2
   border-radius: 4px;
   box-shadow: 8px 8px 4px rgb(190, 190, 190);
 }
+
+
 
 /* .form1DIV
 {

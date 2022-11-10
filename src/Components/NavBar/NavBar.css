@@ -1,14 +1,29 @@
-.nav-link {
-    color: blue;
-}
-
-.navbarNavDropdown
+.Imagen2
 {
-    justify-content: center;
+  width: 23vw;
+  height: 6.8vh;
+  padding-right: 40px;
+  float: left;
+  padding-left: 10px;
+  margin-left: 10px;
 }
 
-.navbar
+.DarkBar
 {
-    background-color: lightgreen;
+  display: flex;
+  flex: 1 1;
+  background-color: rgb(41, 41, 41);
+  max-width: 100vw;
+  height: 11vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
+.btnLogOut
+{
+    margin-right: 10px;
+    float: right;
+    padding-left: 50%;
+}
