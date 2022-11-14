@@ -17,7 +17,9 @@ import { Windows } from 'css.gg';
 import { useEffect, useState } from "react";
 import axios from 'axios';
 import ReactDOM from "react-dom";
-import  { Component } from 'react'
+import  { Component } from 'react';
+import MaterialTable from 'material-table';
+import tableIcons from '../tableIcons/tableIcons';
 
 //  function NovoAttempts()
 //  {
@@ -63,7 +65,7 @@ class Article extends Component {
             })
             console.log(res.data);
         })
-        axios.get('http://127.0.0.1:8000/NovoApi_APP/boms/1')
+        axios.get('http://127.0.0.1:8000/NovoApi_APP/boms/')
         .then(res => {
             this.setState({
                 boms:res.data
@@ -89,6 +91,38 @@ class Article extends Component {
                      this.state.stock.stock[0][2]}
 
                 </p>
+                <MaterialTable
+                className = "NovoTable"
+                title="Parts table"
+                icons={tableIcons}
+                columns={[
+                    { title: "Part", field: "part"},
+                    { title: "Code", field: "code"},
+                    { title: "Quantity", field: "quantity", type: "numeric"},
+                    { title: "Stock", field: "stock"},
+                    { title: "Price", field: "price", type: "numeric"},
+                ]}
+                data={[
+                    {   part:  '', 
+                        code: '12356', 
+                        quantity: 4, 
+                        stock: 'No', 
+                        price: 40, 
+                    },
+                    {   part: 'PCB_A', 
+                        code: '123', 
+                        quantity: 3, 
+                        stock: 'Yes', 
+                        price: 35 
+                    },
+                ]}
+                options={{
+                    exportButton: true,
+                    headerStyle: {
+                        backgroundColor: '#EEE',
+                    actionsColumnIndex: -1,
+                }}}
+              />
             </div>
         )
     }

@@ -11,6 +11,7 @@ import './NovoForm.css';
 import HeaderBar from '../NavBar/NBHeader';
 import Img2 from './novo-logo.png';
 import { Helmet } from 'react-helmet';
+import Button from 'react-bootstrap/Button';
 
 export default function (props) {
   let [authMode, setAuthMode] = useState("signin")
@@ -19,14 +20,16 @@ export default function (props) {
     setAuthMode(authMode === "signin" ? "signup" : "signin")
   }
 
-  const TITLE = 'Novo Parts';
+  const login = (inputUser, inputPass) => {
+    if (inputUser === 'benji' && inputPass === 'chej')
+    window.location.replace('/main');
+    else
+    alert('login incorrecto')
+  }
 
   if (authMode === "signin") {
     return ( 
       <div className="Auth-form-container">
-        <Helmet>
-          <title>{ TITLE }</title>
-        </Helmet>
         <div align="center" className="headerBar2">
             <header className="WhiteBar" id="WhiteBar">
                 <Link to="/main">
@@ -37,7 +40,14 @@ export default function (props) {
                 </Link>
             </header>
         </div>
-        <form className="Auth-form">
+        <form className="Auth-form" onSubmit={ev => {
+          ev.preventDefault();
+
+          const inputUser= ev.target.inputUser.value;
+          const inputPass = ev.target.inputPass.value;
+
+          login(inputUser, inputPass);
+        }}>
           <div className="Auth-form-content">
             <h3 className="Auth-form-title">Sign In</h3>
             <div className="text-center">
@@ -49,9 +59,11 @@ export default function (props) {
             <div className="form-group mt-3">
               <label>Email address</label>
               <input
-                type="email"
+                type="user"
                 className="form-control mt-1"
                 placeholder="Enter email"
+                required
+                id="inputUser"
               />
             </div>
             <div className="form-group mt-3">
@@ -60,14 +72,14 @@ export default function (props) {
                 type="password"
                 className="form-control mt-1"
                 placeholder="Enter password"
+                required
+                id="inputPass"
               />
             </div>
             <div className="d-grid gap-2 mt-3">
-            <Link to="/main">
-              <button type="submit" className="btn btn-primary">
+              <Button type="submit" className="btn btn-primary">
                 Submit
-              </button>
-            </Link>
+              </Button>{''}
             </div>
           </div>
         </form>
