@@ -10,7 +10,6 @@ import {
 import './NovoForm.css';
 import HeaderBar from '../NavBar/NBHeader';
 import Img2 from './novo-logo.png';
-import { Helmet } from 'react-helmet';
 import Button from 'react-bootstrap/Button';
 
 export default function (props) {
