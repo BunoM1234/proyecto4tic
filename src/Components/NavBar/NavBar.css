@@ -1,18 +1,19 @@
-.Imagen2
+.Imagen21
 {
-  width: 21 vw;
-  height: 4vh;
+  width: 8.4vw;
+  height: 9vh;
   padding-right: 40px;
   float: left;
   padding-left: 10px;
   margin-left: 10px;
+  margin-top: 10px;
 }
 
 .DarkBar
 {
   display: flex;
   flex: 1 1;
-  background-color: rgb(41, 41, 41);
+  background-color: transparent;
   max-width: 100vw;
   height: 10vh;
   position: fixed;
@@ -21,7 +22,8 @@
   right: 0;
 }
 
-.btnLogOut
+.linkLogOut
 {
-    margin-right: 10px;
+  margin-right: 10px;
+  float: right;
 }
