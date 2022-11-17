@@ -22,11 +22,13 @@ function HeaderBar() {
                         alt="Imagen"
                     />
                 </Link>
-                <Link to="/" className="linkLogOut">
-                    <Button className="btnLogOut">
-                        Log out
-                    </Button>
-                </Link>
+                <div className="divLogOut">
+                    <Link to="/" className="linkLogOut">
+                        <Button className="btnLogOut">
+                            Log out
+                        </Button>
+                    </Link>
+                </div>
             </header>
         </div>
     );

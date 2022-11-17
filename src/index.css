@@ -110,9 +110,6 @@ body
 
 }
 
-.gradient {
-  max-width: 100vw;
-}
 .BOM
 {
   margin-right: 20px;
@@ -141,7 +138,7 @@ body
 {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(-45deg, #000000, #686868, #aaaaaa, #ffffff, #e0e0e0);
+background: linear-gradient(-45deg, #7a7cff, #9387ff, #d6feff, #ffffff, #e0e0e0);
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
 }
@@ -327,7 +324,7 @@ h2
 {
   max-width: 100vw;
   max-height: 100vh;
-  background-color: rgb(104, 103, 103);
+  background-color: rgb(255, 255, 255);
   display: flex;
 }
 
