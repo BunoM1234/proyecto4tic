@@ -15,10 +15,14 @@ import {
   import Menu from "@material-ui/core/Menu";
   import HeaderBar from "../NavBar/NBHeader";
   import Skeleton from '@mui/material/Skeleton';
+  import { useCookies } from "react-cookie";
   
 
 function NovoMain() {
-
+  const [cookies, setCookie] = useCookies(['user']);
+  if(!cookies.user) {
+    return window.location.replace("/")
+}
 
     return(
 <>

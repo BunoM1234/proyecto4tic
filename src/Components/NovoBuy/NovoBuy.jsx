@@ -101,10 +101,15 @@ import React from "react";
    import axios from 'axios';
    import  { Component } from 'react';
    import Article from '../NovoAttempts/NovoAttempts';
+   import { useCookies } from "react-cookie";
 
 
    
    const NovoBuy = () => {
+    const [cookies, setCookie] = useCookies(['user']);
+    if(!cookies.user) {
+      return window.location.replace("/")
+    }
     return (
       <div className ="completeDiv">
          <HeaderBar className="navBar"/>

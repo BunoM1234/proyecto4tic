@@ -21,10 +21,13 @@ import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import './NovoFrontPage.css';
+import { useCookies } from "react-cookie";
 
-
+const options = ['Option 1', 'Option 2'];
 
 function App() {
+  const [value, setValue] = React.useState(options[0]);
+  const [inputValue, setInputValue] = React.useState('');
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -65,8 +68,11 @@ function App() {
   };
 
   const handleServiceRemove = (index) => {
-    const list = [...serviceList];
-    list.splice(index, 1);
+    const list = serviceList.slice();
+    console.log(serviceList)
+    console.log(serviceList[index])
+    console.log(list.splice(index, 1))
+    console.log(list)
     setServiceList(list);
   };
   
@@ -94,11 +100,10 @@ function App() {
   }
   
 
-  // Como sacar info de la api
-  // const [boms, setBoms] = useState()
-  // useEffect(()=>{
-  //   fetch("http://lcoalhost:8000/NovoApi_APP/boms").then(res => res.json).then(data => setBoms(data))
-  // }, [])
+  const [cookies, setCookie] = useCookies(['user']);
+  if(!cookies.user) {
+      return window.location.replace("/")
+  }
 
   return (
     <div className="completeDiv">
@@ -111,23 +116,20 @@ function App() {
         {serviceList.map((singleService, index) => (
           <div key={index} className="services" align="center">
             <div className="first-division">
-              
-              <Autocomplete 
-                className='autoCompleteBoard'
-                disablePortal
-                id="board-autocomplete"
-                options={[
-                  {label: 'PCB_A'},
-                  {label: 'PCB_B'},
-                  {label: 'PCB_C'},
-                  {label: 'PCB_D'},
-                ]}
-                option={{
-                  backgroundColor: '#FFFFFF',
-                }}
+            <Autocomplete
+                value={value}
+                onChange={(event, newValue) => {
+                setValue(newValue);
+              }}
+                inputValue={inputValue}
+                onInputChange={(event, newInputValue) => {
+                setInputValue(newInputValue);
+              }}
+                id="controllable-states-demo"
+                options={options}
                 sx={{ width: 300 }}
-                renderInput={(params) => <TextField {...params} label="Board" />}
-/>
+                renderInput={(params) => <TextField {...params} label="Controllable" />}
+              />
               
               <Autocomplete 
                 className='autoCompleteBoard'
@@ -163,7 +165,8 @@ function App() {
               {serviceList.length !== 1 && (
                 <button
                   type="button"
-                  onClick={() => handleServiceRemove(index)}
+                  id={index}
+                  onClick={(e) => handleServiceRemove(e.target.id)}
                   class="btn btn-outline-danger"
                   name="deleteBtn"
                 >

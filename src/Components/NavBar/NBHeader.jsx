@@ -10,9 +10,12 @@ import MenuButton from '../MenuButton/MenuButton';
 import Img21 from './novologo.png';
 import Button from 'react-bootstrap/Button';
 import './NavBar.css';
+import {useCookies} from "react-cookie"
 
 
 function HeaderBar() {
+  const [cookies, setCookie, removeCookie] = useCookies(['user']);
+  console.log(cookies)
     return(
         <div align="center" className="headerBar">
             <header className="DarkBar" id="DarkBar">
@@ -23,11 +26,14 @@ function HeaderBar() {
                     />
                 </Link>
                 <div className="divLogOut">
-                    <Link to="/" className="linkLogOut">
-                        <Button className="btnLogOut">
+                        <Button onClick={()=>{
+                            removeCookie('Password')
+                            removeCookie('Name')
+                            removeCookie('user')
+                            window.location.reload()
+                        }} className="btnLogOut">
                             Log out
                         </Button>
-                    </Link>
                 </div>
             </header>
         </div>

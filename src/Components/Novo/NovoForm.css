@@ -61,4 +61,5 @@
   float: left;
   padding-left: 10px;
   margin-left: 10px;
+  filter: drop-shadow(4px 4px 4px rgb(131, 133, 146));
 }

@@ -1,6 +1,6 @@
 .Imagen21
 {
-  width: 7vw;
+  width: 110px;
   height: 8vh;
   padding-right: 40px;
   float: left;
@@ -34,6 +34,5 @@
 
 .divLogOut
 {
-  display: flex;
-  justify-content: flex-end;
+  right: 90%;
 }
