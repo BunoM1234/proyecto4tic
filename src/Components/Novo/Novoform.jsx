@@ -31,12 +31,10 @@ export default function (props) {
       <div className="Auth-form-container">
         <div align="center" className="headerBar2">
             <header className="WhiteBar" id="WhiteBar">
-                <Link to="/main">
                     <img className="Imagen2"
                         src={Img2}
                         alt="Imagen"
                     />
-                </Link>
             </header>
         </div>
         <form className="Auth-form" onSubmit={ev => {

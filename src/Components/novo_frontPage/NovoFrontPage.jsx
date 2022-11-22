@@ -1,6 +1,6 @@
 import React from 'react';
  import Img2 from '../Novo/novo-logo.png';
- import Button from 'react-bootstrap/Button';
+ import Button from '@mui/material/Button';
  import DeleteIcon from './1345874.png'
  import {
    BrowserRouter as Router,
@@ -17,10 +17,44 @@ import HeaderBar from "../NavBar/NBHeader";
 import { Windows } from 'css.gg';
 import { useEffect, useState } from "react";
 import axios from 'axios';
+import Snackbar from '@mui/material/Snackbar';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+import './NovoFrontPage.css';
 
 
 
 function App() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+  const action = (
+    <React.Fragment>
+      <Button color="primary" size="small" onClick={handleClose}>
+        UNDO
+      </Button>
+      <IconButton
+        size="small"
+        aria-label="close"
+        color="inherit"
+        onClick={handleClose}
+      >
+        <CloseIcon fontSize="small" />
+      </IconButton>
+    </React.Fragment>
+  );
+
   const [serviceList, setServiceList] = useState([{ service: "" }]);
 
   const handleServiceChange = (e, index) => {
@@ -83,10 +117,10 @@ function App() {
                 disablePortal
                 id="board-autocomplete"
                 options={[
-                  {label: 1},
-                  {label: 2},
-                  {label: 3},
-                  {label: 4},
+                  {label: 'PCB_A'},
+                  {label: 'PCB_B'},
+                  {label: 'PCB_C'},
+                  {label: 'PCB_D'},
                 ]}
                 option={{
                   backgroundColor: '#FFFFFF',
@@ -143,7 +177,7 @@ function App() {
                   type="button"
                   onClick={handleServiceAdd}
                   className="add-btn"
-                  variant = "primary"
+                  variant="contained"
                 >
                   <span>Add a Service</span>
                 </Button>
@@ -156,13 +190,21 @@ function App() {
       <div className="makeOrder">
       
         <Button
-          type="sumbit"
-          variant="primary"
+          color="secondary"
+          variant="contained"
           className="buyOrder"
+          onClick={handleClick}
         >
           <span class="text">Add to buy order</span>
           
         </Button>
+        <Snackbar
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        message="Order Created!"
+        action={action}
+      />
       </div>
     </div>
     </form>

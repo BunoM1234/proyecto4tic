@@ -106,7 +106,7 @@ import React from "react";
    
    const NovoBuy = () => {
     return (
-      <div className ="completeDiv2">
+      <div className ="completeDiv">
          <HeaderBar className="navBar"/>
             <div className="NovoTableDiv">
               <MaterialTable

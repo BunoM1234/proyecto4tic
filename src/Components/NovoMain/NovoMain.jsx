@@ -14,6 +14,7 @@ import {
   import MenuItem from "@material-ui/core/MenuItem";
   import Menu from "@material-ui/core/Menu";
   import HeaderBar from "../NavBar/NBHeader";
+  import Skeleton from '@mui/material/Skeleton';
   
 
 function NovoMain() {
