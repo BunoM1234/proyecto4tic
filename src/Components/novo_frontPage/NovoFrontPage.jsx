@@ -128,7 +128,7 @@ function App() {
                 id="controllable-states-demo"
                 options={options}
                 sx={{ width: 300 }}
-                renderInput={(params) => <TextField {...params} label="Controllable" />}
+                renderInput={(params) => <TextField {...params} label="Board" />}
               />
               
               <Autocomplete 
