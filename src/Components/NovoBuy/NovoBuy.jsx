@@ -119,6 +119,7 @@ import React from "react";
                 title="Parts table"
                 icons={tableIcons}
                 columns={[
+                    { title: "Board", field: "board"},
                     { title: "Part", field: "part"},
                     { title: "Code", field: "code"},
                     { title: "Quantity", field: "quantity", type: "numeric"},
@@ -126,8 +127,8 @@ import React from "react";
                     { title: "Price", field: "price", type: "numeric"},
                 ]}
                 data={[
-                    { part: 'PCB_B', code: '12356', quantity: 4, stock: 'No', price: 40 },
-                    { part: 'PCB_A', code: '123', quantity: 3, stock: 'Yes', price: 35 },
+                    { board: "Board_1", part: 'PCB_B', code: '12356', quantity: 4, stock: 'No', price: 40 },
+                    { board: "Board_2", part: 'PCB_A', code: '123', quantity: 3, stock: 'Yes', price: 35 },
                 ]}
                 options={{
                     exportButton: true,

@@ -105,6 +105,18 @@ function App() {
       return window.location.replace("/")
   }
 
+  axios.post('/user', {
+    board: {},
+    bom: {},
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
+
   return (
     <div className="completeDiv">
      <HeaderBar/>
@@ -117,6 +129,7 @@ function App() {
           <div key={index} className="services" align="center">
             <div className="first-division">
             <Autocomplete
+                className='autoCompleteBoard'
                 value={value}
                 onChange={(event, newValue) => {
                 setValue(newValue);
@@ -132,18 +145,19 @@ function App() {
               />
               
               <Autocomplete 
-                className='autoCompleteBoard'
-                disablePortal
-                id="bom-autocomplete"
-                options={[
-                  {label: 1},
-                  {label: 2},
-                  {label: 3},
-                  {label: 4},
-                ]}
-                sx={{ width: 300 }}
-                renderInput={(params) => <TextField {...params} label="BOM" />}
-                onInput={FetchBoardFunction}
+               className='autoCompleteBoard'
+               value={value}
+               onChange={(event, newValue) => {
+               setValue(newValue);
+             }}
+               inputValue={inputValue}
+               onInputChange={(event, newInputValue) => {
+               setInputValue(newInputValue);
+             }}
+               id="controllable-states-demo"
+               options={options}
+               sx={{ width: 300 }}
+               renderInput={(params) => <TextField {...params} label="Board" />}
 />
 
               <Autocomplete 
