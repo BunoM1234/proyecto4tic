@@ -33,7 +33,7 @@ root.render
               <Route path="/home" element={<NovoFrontPage />} />
               <Route path="/main" element={<NovoMain/>} />
               <Route path="/orders" element={<NovoBuy/>}/>
-              <Route path="/attempts" element={<NovoCookies/>} />
+              <Route path="/attempts" element={<NovoAttempts/>} />
             
           </Routes>
         </Router>

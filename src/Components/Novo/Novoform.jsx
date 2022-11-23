@@ -43,16 +43,7 @@ export default function (props) {
     alert('login incorrecto')
   }
 
-  axios.post('/', {
-    board: 'SUP005AX-EB',
-    bom: ''
-  })
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+  
 
   if (authMode === "signin") {
     return ( 

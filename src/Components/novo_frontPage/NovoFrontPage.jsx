@@ -28,6 +28,8 @@ const options = ['Option 1', 'Option 2'];
 function App() {
   const [value, setValue] = React.useState(options[0]);
   const [inputValue, setInputValue] = React.useState('');
+  const [value2, setValue2] = React.useState(options[0]);
+  const [inputValue2, setInputValue2] = React.useState('');
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -88,10 +90,10 @@ function App() {
 
     useEffect(()=>{
       const loadBoard = async() => {
-        setLoading(true);
-        const response = await axios.get("http://lcoalhost:8000/NovoApi_APP/boards");
-        setBoards(response.data);
-        setLoading(false);
+        // setLoading(true);
+        // const response = await axios.get("http://lcoalhost:8000/NovoApi_APP/boards");
+        // setBoards(response.data);
+        // setLoading(false);
       }
 
       loadBoard();
@@ -105,9 +107,8 @@ function App() {
       return window.location.replace("/")
   }
 
-  axios.post('/user', {
-    board: {},
-    bom: {},
+  axios.post('http://127.0.0.1:8000/NovoApi_APP/boards/', {
+    board: 'SUP005AX-EB',
   })
   .then(function (response) {
     console.log(response);
@@ -115,6 +116,8 @@ function App() {
   .catch(function (error) {
     console.log(error);
   });
+
+  
 
 
   return (
