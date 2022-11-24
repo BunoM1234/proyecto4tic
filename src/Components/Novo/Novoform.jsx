@@ -66,7 +66,7 @@ export default function (props) {
                         src={Img2}
                         alt="Imagen"
                     />
-                    <div className="togglerDiv">
+                    <div className="divToggler">
                       <Toggle theme={theme} toggleTheme={themeToggler} className='btnToggle'/>
                     </div>
             </header>
