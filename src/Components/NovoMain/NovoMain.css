@@ -1,10 +1,4 @@
-.titleCard
-{
-    margin: auto;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-}
+
 .titleCard:after
 {
     display:block;
@@ -13,4 +7,14 @@
 .titleCard:hover:after
 {
     transform: scaleX(1);
+}
+
+.themeToggler{
+    margin: 10px;
+}
+
+.divToggler
+{
+    margin-right: 10px;
+    float: right;
 }

@@ -102,15 +102,30 @@ import React from "react";
    import  { Component } from 'react';
    import Article from '../NovoAttempts/NovoAttempts';
    import { useCookies } from "react-cookie";
+  import {ThemeProvider} from "styled-components";
+  import { GlobalStyles } from "../NovoTheme/GlobalStyles";
+  import { lightTheme, darkTheme } from "../NovoTheme/Theme";
+  import { useState, useEffect } from "react";
+  import  {useDarkMode} from "../NovoTheme/UseDarkMode";
+  import Toggle from "../NovoTheme/Toggler";
+  import './NovoBuy.css';
 
 
    
    const NovoBuy = () => {
     const [cookies, setCookie] = useCookies(['user']);
+    const [theme, themeToggler, mountedComponent] = useDarkMode();
+
+    const themeMode = theme === 'light' ? lightTheme : darkTheme;
+
     if(!cookies.user) {
       return window.location.replace("/")
     }
+    if(!mountedComponent) return <div/>
     return (
+      <ThemeProvider theme={themeMode}>
+      <>
+      <GlobalStyles/>
       <div className ="completeDiv">
          <HeaderBar className="navBar"/>
             <div className="NovoTableDiv">
@@ -138,8 +153,14 @@ import React from "react";
                 }}}
               />
               </div>
+             <div className='divToggler'>
+        <Toggle theme={theme} toggleTheme={themeToggler} />
+      </div> 
         </div>
-    
+        
+        </>
+        
+    </ThemeProvider>
     );
 };
 

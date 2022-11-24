@@ -12,6 +12,12 @@ import HeaderBar from '../NavBar/NBHeader';
 import Img2 from './novo-logo.png';
 import Button from 'react-bootstrap/Button';
 import { useCookies } from 'react-cookie';
+import {ThemeProvider} from "styled-components";
+import { GlobalStyles } from "../NovoTheme/GlobalStyles";
+import { lightTheme, darkTheme } from "../NovoTheme/Theme";
+import { useEffect } from "react";
+import  {useDarkMode} from "../NovoTheme/UseDarkMode";
+import Toggle from "../NovoTheme/Toggler";
 
 export default function (props) {
   let [authMode, setAuthMode] = useState("signin")
@@ -19,6 +25,9 @@ export default function (props) {
   const [name, setName] = useState('');
   const [pwd, setPwd] = useState('');
   const [cookies, setCookie] = useCookies(['user']);
+  const [theme, themeToggler, mountedComponent] = useDarkMode();
+
+  const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
   const handle = () => {
     if(name === 'benji' && pwd === 'chej'){
@@ -44,16 +53,22 @@ export default function (props) {
   }
 
   
-
+  if(!mountedComponent) return <div/>
   if (authMode === "signin") {
     return ( 
-      <div className="Auth-form-container">
+      <ThemeProvider theme={themeMode}>
+        <>
+      <GlobalStyles/>
+      <div className="Auth-form-container" >
         <div align="center" className="headerBar2">
             <header className="WhiteBar" id="WhiteBar">
                     <img className="Imagen2"
                         src={Img2}
                         alt="Imagen"
                     />
+                    <div className="togglerDiv">
+                      <Toggle theme={theme} toggleTheme={themeToggler} className='btnToggle'/>
+                    </div>
             </header>
         </div>
         <form className="Auth-form" onSubmit={ev => {
@@ -64,9 +79,9 @@ export default function (props) {
 
           login(inputUser, inputPass);
         }}>
-          <div className="Auth-form-content">
+          <div className="Auth-form-content" >
             <h3 className="Auth-form-title">Sign In</h3>
-            <div className="form-group mt-3">
+            <div className="form-group mt-3" >
               <label>User</label>
               <input
                 type="user"
@@ -99,9 +114,15 @@ export default function (props) {
                 Submit
               </Button>{''}
             </div>
+            
           </div>
         </form>
+        <div className="">
+        </div>
+        
       </div>
+      </>
+      </ThemeProvider>
     )
   }
 }

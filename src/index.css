@@ -141,12 +141,12 @@ body
 {
   width: 100%;
   min-height: 100vh;
-background: linear-gradient(-45deg, #7a7cff, #9387ff, #d6feff, #ffffff, #e0e0e0);
+/* background: linear-gradient(-45deg, #7a7cff, #9387ff, #d6feff, #ffffff, #e0e0e0);
   background-size: 400% 400%;
-  animation: gradient 10s ease infinite;
+  animation: gradient 10s ease infinite; */
 }
 
-@keyframes gradient{
+/* @keyframes gradient{
   0%{
     background-position: 0% 50%;
   }
@@ -156,7 +156,7 @@ background: linear-gradient(-45deg, #7a7cff, #9387ff, #d6feff, #ffffff, #e0e0e0)
   100%{
     background-position: 0% 50%;
   }
-}
+} */
 
 .card
 {
@@ -344,7 +344,7 @@ h2
 {
   margin-bottom: 10px;
 }
- .completeDiv
+ .completeDiv > .NovoTableDiv
 {
   display:flex;
   justify-content:center;
