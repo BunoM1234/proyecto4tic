@@ -43,7 +43,11 @@ if(!mountedComponent) return <div/>
 <>
     <HeaderBar>
     </HeaderBar>
-    
+  <div> 
+  <div className="divToggler">
+    <Toggle theme={theme} toggleTheme={themeToggler} className='btnToggle'/>
+  </div>
+ 
   <div className="completeDiv5">
     <Link style={{textDecoration: 'none', textAlign: "center"}} to="/home">
       <div className="Card1 Link">
@@ -68,10 +72,8 @@ if(!mountedComponent) return <div/>
         <h5>See your diferent pending orders.</h5>
       </div>
       </Link>
-      </div> 
-      <div className='divToggler'>
-        <Toggle theme={theme} toggleTheme={themeToggler} />
       </div>
+      </div> 
       </>
       </>
     </ThemeProvider>

@@ -103,7 +103,7 @@ body
   -webkit-backdrop-filter: blur(8px);  /* Safari 9+ */
   backdrop-filter: blur(8px); /* Chrome and Opera */
   box-shadow: 0px 10px 15px 10px rgb(0 0 0 / 15%);
-  background-color: rgba(62, 60, 60, 0.15); 
+  background-color: rgba(255, 255, 255, 0.15); 
 }
 
 .name
@@ -344,7 +344,7 @@ h2
 {
   margin-bottom: 10px;
 }
- .completeDiv > .NovoTableDiv
+ .completeDiv
 {
   display:flex;
   justify-content:center;

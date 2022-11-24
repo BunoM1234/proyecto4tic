@@ -52,6 +52,19 @@
   align-items: center;
   -webkit-backdrop-filter: blur(8px);  /* Safari 9+ */
   backdrop-filter: blur(8px); /* Chrome and Opera */
+  margin-top: 10px;
+}
+
+.WhiteBar > .Imagen2
+{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.WhiteBar > .togglerDiv
+{
+  display: flex;
+  justify-content: flex-end;
 }
 
 .Imagen2
@@ -62,10 +75,4 @@
   float: left;
   padding-left: 10px;
   margin-left: 10px;
-}
-
-.togglerDiv
-{
-  display: flex;
-  justify-content: flex-end;
 }

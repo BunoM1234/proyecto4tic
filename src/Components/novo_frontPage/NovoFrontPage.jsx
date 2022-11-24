@@ -22,6 +22,12 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import './NovoFrontPage.css';
 import { useCookies } from "react-cookie";
+import {ThemeProvider} from "styled-components";
+import { GlobalStyles } from "../NovoTheme/GlobalStyles";
+import { lightTheme, darkTheme } from "../NovoTheme/Theme";
+import  {useDarkMode} from "../NovoTheme/UseDarkMode";
+import Toggle from "../NovoTheme/Toggler";
+import { styled } from "@mui/material/styles";
 
 const options = ['Option 1', 'Option 2'];
 
@@ -31,10 +37,33 @@ function App() {
   const [value2, setValue2] = React.useState(options[0]);
   const [inputValue2, setInputValue2] = React.useState('');
   const [open, setOpen] = React.useState(false);
+  const [theme, themeToggler, mountedComponent] = useDarkMode();
+
+  const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
   const handleClick = () => {
     setOpen(true);
   };
+
+  const StyledAutocomplete = styled(Autocomplete)({
+    
+    "&.Mui-focused .MuiInputLabel-outlined": {
+      color: "blue"
+    },
+    "& .MuiAutocomplete-inputRoot": {
+      color: "blue",
+      // This matches the specificity of the default styles at https://github.com/mui-org/material-ui/blob/v4.11.3/packages/material-ui-lab/src/Autocomplete/Autocomplete.js#L90
+      "& .MuiOutlinedInput-notchedOutline": {
+        borderColor: "blue"
+      },
+      "&:hover .MuiOutlinedInput-notchedOutline": {
+        borderColor: "#383F9B"
+      },
+      "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+        borderColor: "blue"
+      }
+    }
+  });
 
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
@@ -119,10 +148,17 @@ function App() {
 
   
 
-
+  if(!mountedComponent) return <div/>
   return (
+    <ThemeProvider theme={themeMode}>
+      <>
+      <GlobalStyles/>
+      <div> 
+      <HeaderBar className="navBar"/>
+        <div className="divToggler">
+          <Toggle theme={theme} toggleTheme={themeToggler} className='btnToggle'/>
+        </div>
     <div className="completeDiv">
-     <HeaderBar/>
     <form className="OrderForm" autoComplete="off">
     <div className="gradient">
       <div className="form-field">
@@ -149,22 +185,23 @@ function App() {
               
               <Autocomplete 
                className='autoCompleteBoard'
-               value={value}
-               onChange={(event, newValue) => {
-               setValue(newValue);
+               freeSolo
+               value={value2}
+               onChange={(event, newValue2) => {
+               setValue2(newValue2);
              }}
-               inputValue={inputValue}
-               onInputChange={(event, newInputValue) => {
-               setInputValue(newInputValue);
+               inputValue={inputValue2}
+               onInputChange={(event, newInputValue2) => {
+               setInputValue2(newInputValue2);
              }}
                id="controllable-states-demo"
                options={options}
                sx={{ width: 300 }}
-               renderInput={(params) => <TextField {...params} label="Board" />}
+               renderInput={(params) => <TextField {...params} label="BOM" />}
 />
-
               <Autocomplete 
                 className='autoCompleteBoard'
+                freeSolo
                 disablePortal
                 id="quantity-autocomplete"
                 options={[
@@ -192,7 +229,7 @@ function App() {
               )}
             </div>
             <div className="second-division">
-              {serviceList.length - 1 === index && serviceList.length < 15 && (
+              {serviceList.length - 1 === index && serviceList.length < 3 && (
                 <Button
                   type="button"
                   onClick={handleServiceAdd}
@@ -229,6 +266,10 @@ function App() {
     </div>
     </form>
     </div>
+    </div>
+    </>
+        
+    </ThemeProvider>
   );
 }
 

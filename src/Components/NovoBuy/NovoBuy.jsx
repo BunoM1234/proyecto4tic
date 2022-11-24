@@ -126,8 +126,13 @@ import React from "react";
       <ThemeProvider theme={themeMode}>
       <>
       <GlobalStyles/>
-      <div className ="completeDiv">
-         <HeaderBar className="navBar"/>
+      <div> 
+      <HeaderBar className="navBar"/>
+        <div className="divToggler">
+          <Toggle theme={theme} toggleTheme={themeToggler} className='btnToggle'/>
+        </div>
+        <div className ="completeDiv">
+          
             <div className="NovoTableDiv">
               <MaterialTable
                 className = "NovoTable"
@@ -152,16 +157,16 @@ import React from "react";
                     actionsColumnIndex: -1,
                 }}}
               />
-              </div>
-             <div className='divToggler'>
-        <Toggle theme={theme} toggleTheme={themeToggler} />
-      </div> 
         </div>
+      <div className='divToggler'>
+    </div> 
+      
+  </div>
+</div>
+</>
         
-        </>
-        
-    </ThemeProvider>
-    );
+</ThemeProvider>
+);
 };
 
 export default NovoBuy;
