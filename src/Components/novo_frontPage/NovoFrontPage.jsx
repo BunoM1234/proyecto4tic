@@ -28,6 +28,7 @@ import { lightTheme, darkTheme } from "../NovoTheme/Theme";
 import  {useDarkMode} from "../NovoTheme/UseDarkMode";
 import Toggle from "../NovoTheme/Toggler";
 import { styled } from "@mui/material/styles";
+import  { Component } from 'react';
 
 const options = ['Option 1', 'Option 2'];
 
@@ -44,6 +45,69 @@ function App() {
   const handleClick = () => {
     setOpen(true);
   };
+
+  class Article extends Component {
+    constructor() {
+        super();
+        this.state={
+            dataS:[],
+            boards:[],
+            boms:[],
+            stock:[]
+        }
+    }
+
+    // const response = await fetch(url, {
+    //     headers: "application/json",
+    //     mode: "no-cors",
+        
+    // })
+
+
+    componentDidMount(){
+        axios.get('http://127.0.0.1:8000/NovoApi_APP/manufacturers/', { mode: 'no-cors'})
+        .then(res => {
+            this.setState({
+                dataS:res.data
+            })
+            console.log(res.data);
+        })
+        axios.get('http://127.0.0.1:8000/NovoApi_APP/boards/', { mode: 'no-cors'})
+        .then(res => {
+            this.setState({
+                boards:res.data
+            })
+            console.log(res.data);
+        })
+        
+        axios.get('http://127.0.0.1:8000/NovoApi_APP/boms/', { mode: 'no-cors'})
+        .then(res => {
+            this.setState({
+                boms:res.data
+            })
+            console.log(res.data);
+        })
+        axios.get('http://127.0.0.1:8000/NovoApi_APP/stock/', { mode: 'no-cors'})
+        .then(res => {
+            this.setState({
+                stock:res.data
+            })
+            console.log(res.data);
+        })
+        
+        axios.post('http://127.0.0.1:8000/NovoApi_APP/boards/ind/' , {
+            board: 'SUP005AX-EB',
+        })
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    }
+  }
+
+  
 
   const StyledAutocomplete = styled(Autocomplete)({
     
@@ -145,6 +209,14 @@ function App() {
   .catch(function (error) {
     console.log(error);
   });
+
+  axios.get('http://127.0.0.1:8000/NovoApi_APP/boards/', { mode: 'no-cors'})
+        .then(res => {
+            this.setState({
+                boards:res.data
+            })
+            console.log(res.data);
+        })
 
   
 

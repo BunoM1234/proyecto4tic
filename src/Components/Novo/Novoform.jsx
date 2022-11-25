@@ -86,7 +86,7 @@ export default function (props) {
               <input
                 type="user"
                 className="form-control mt-1"
-                placeholder="Enter email"
+                placeholder="Enter user"
                 required
                 id="inputUser"
                 value={name}
