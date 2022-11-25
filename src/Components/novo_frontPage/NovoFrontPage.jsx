@@ -55,7 +55,7 @@ function App() {
             boms:[],
             stock:[]
         }
-    }
+    };
 
     // const response = await fetch(url, {
     //     headers: "application/json",
