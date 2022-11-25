@@ -3,9 +3,9 @@
     position: fixed;
     display: flex;
     justify-content: flex-end;
-    top: 20px;
+    top: 6%;
     right: 10px;
-    filter: drop-shadow(8px 8px 4px rgb(112, 111, 111));
-    backdrop-filter: blur(8px);
+    /* filter: drop-shadow(8px 8px 4px rgb(112, 111, 111));
+    backdrop-filter: blur(8px); */
     margin-right: 10px;
 }

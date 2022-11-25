@@ -13,11 +13,3 @@
     margin: 10px;
 }
 
-.divToggler
-{
-    display: flex;
-    justify-content: flex-end;
-    float: right;
-    filter: drop-shadow(8px 8px 8px rgb(112, 111, 111));
-    backdrop-filter: blur(8px);
-}

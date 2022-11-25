@@ -72,6 +72,7 @@ class Article extends Component {
             })
             console.log(res.data);
         })
+        
         axios.get('http://127.0.0.1:8000/NovoApi_APP/boms/', { mode: 'no-cors'})
         .then(res => {
             this.setState({
