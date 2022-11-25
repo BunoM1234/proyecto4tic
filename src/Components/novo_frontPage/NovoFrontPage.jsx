@@ -183,10 +183,10 @@ function App() {
 
     useEffect(()=>{
       const loadBoard = async() => {
-        // setLoading(true);
-        // const response = await axios.get("http://lcoalhost:8000/NovoApi_APP/boards");
-        // setBoards(response.data);
-        // setLoading(false);
+        // // setLoading(true);
+        // // const response = await axios.get("http://lcoalhost:8000/NovoApi_APP/boards");
+        // // setBoards(response.data);
+        // // setLoading(false);
       }
 
       loadBoard();
