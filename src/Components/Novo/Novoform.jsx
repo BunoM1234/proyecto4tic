@@ -30,7 +30,7 @@ export default function (props) {
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
   const handle = () => {
-    if(name === 'benji' && pwd === 'chej'){
+    if(name === 'admin' && pwd === 'rootadmin'){
       setCookie('Name', name, { path: '/'});
       setCookie('Password', pwd, { path: '/'});
       setCookie('user', name, { path: '/'});
@@ -46,7 +46,7 @@ export default function (props) {
   }
 
   const login = (inputUser, inputPass) => {
-    if (inputUser === 'benji' && inputPass === 'chej')
+    if (inputUser === 'admin' && inputPass === 'rootadmin')
     window.location.replace('/main');
     else
     alert('login incorrecto')

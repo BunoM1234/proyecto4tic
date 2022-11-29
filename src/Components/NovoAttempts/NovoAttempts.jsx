@@ -21,6 +21,8 @@ import  { Component } from 'react';
 import MaterialTable from 'material-table';
 import tableIcons from '../tableIcons/tableIcons';
 
+const options = ['option 2'];
+
 //  function NovoAttempts()
 //  {
 //    const [boards, setBoards] = useState()
@@ -98,6 +100,7 @@ class Article extends Component {
             console.log(error);
         });
     }
+    
 
     
 
@@ -116,6 +119,7 @@ class Article extends Component {
                 title="Parts table"
                 icons={tableIcons}
                 columns={[
+                    { title: "Board", field: "board"},
                     { title: "Part", field: "part"},
                     { title: "Code", field: "code"},
                     { title: "Quantity", field: "quantity", type: "numeric"},
@@ -123,7 +127,9 @@ class Article extends Component {
                     { title: "Price", field: "price", type: "numeric"},
                 ]}
                 data={[
-                    {   part:  '', 
+                    {   board:  this.state.boards.boards &&
+                        this.state.boards.boards[1][0],
+                        part: '', 
                         code: '12356', 
                         quantity: 4, 
                         stock: 'No', 
@@ -143,6 +149,15 @@ class Article extends Component {
                     actionsColumnIndex: -1,
                 }}}
               />
+              <Autocomplete
+               className='autoCompleteBoard'
+               id="controllable-states-demo"
+               options={options}
+               sx={{ width: 300 }}
+               renderInput={(params) => <TextField {...params} label="Board" />}
+              />
+
+              
             </div>
         )
     }

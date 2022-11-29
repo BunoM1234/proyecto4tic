@@ -30,7 +30,7 @@ import Toggle from "../NovoTheme/Toggler";
 import { styled } from "@mui/material/styles";
 import  { Component } from 'react';
 
-const options = ['Option 1', 'Option 2'];
+const options = ['option 1', 'option 2'];
 
 function App() {
   const [value, setValue] = React.useState(options[0]);
@@ -95,15 +95,15 @@ function App() {
             console.log(res.data);
         })
         
-        axios.post('http://127.0.0.1:8000/NovoApi_APP/boards/ind/' , {
-            board: 'SUP005AX-EB',
-        })
-        .then(function (response) {
-            console.log(response);
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
+        // axios.post('http://127.0.0.1:8000/NovoApi_APP/boards/ind/' , {
+        //     board: 'SUP005AX-EB',
+        // })
+        // .then(function (response) {
+        //     console.log(response);
+        // })
+        // .catch(function (error) {
+        //     console.log(error);
+        // });
     }
   }
 
@@ -200,15 +200,15 @@ function App() {
       return window.location.replace("/")
   }
 
-  axios.post('http://127.0.0.1:8000/NovoApi_APP/boards/', {
-    board: 'SUP005AX-EB',
-  })
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+  // axios.post('http://127.0.0.1:8000/NovoApi_APP/boards/', {
+  //   board: 'SUP005AX-EB',
+  // })
+  // .then(function (response) {
+  //   console.log(response);
+  // })
+  // .catch(function (error) {
+  //   console.log(error);
+  // });
 
   axios.get('http://127.0.0.1:8000/NovoApi_APP/boards/', { mode: 'no-cors'})
         .then(res => {
