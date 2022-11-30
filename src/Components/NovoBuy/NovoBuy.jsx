@@ -1,116 +1,32 @@
-// import React from 'react';
-// import {
-//     BrowserRouter as Router,
-//     Routes,
-//     Route,
-//     Link,
-//     NavLink
-//   } from 'react-router-dom';
-//   import Button from 'react-bootstrap/Button';
-//   import Img2 from '../Novo/novo-logo.png';
-//   import "bootstrap/dist/css/bootstrap.min.css";
-//   import { useTable } from 'react-table';
-//   import Table from 'react-bootstrap/Table';
-//   import { FaFileCsv } from "react-icons/fa"
-
-
-
-
-// const NovoForm = () => {
-//     return (
-//     <div>
-//         <header className="DarkBar" id="DarkBar">
-//             <Link to="/main">
-//                 <img className="Imagen2"
-//                     src={Img2}
-//                     alt="Imagen"
-//                 />
-//             </Link>
-//             <Link to ="/">
-//                 <Button className="outBtn" variant="primary">
-//                     Log Out
-//                 </Button>
-//             </Link>
-//        </header>
-// <div className="tableParts">
-//     <Table striped bordered hover size="sm">
-//       <thead>
-//         <tr>
-//           <th>NovoSpace parts</th>
-//           <th>Part</th>
-//           <th>Code</th>
-//           <th>Quantity</th>
-//           <th>Stock available</th>
-//           <th>Price</th>
-//         </tr>
-//       </thead>
-//       <tbody>
-//         <tr>
-//           <td>1</td>
-//           <td>Mark</td>
-//           <td>Otto</td>
-//           <td>@mdo</td>
-//           <td>@mdo</td>
-//           <td>@mdo</td>
-//         </tr>
-//         <tr>
-//           <td>2</td>
-//           <td>Jacob</td>
-//           <td>Thornton</td>
-//           <td>@fat</td>
-//           <td>@fat</td>
-//           <td>@fat</td>
-//         </tr>
-//         <tr>
-//           <td>3</td>
-//           <td colSpan={2}>Larry the Bird</td>
-//           <td>@twitter</td>
-//           <td>@twitter</td>
-//           <td>@twitter</td>
-//         </tr>
-//       </tbody>
-//     </Table>
-// </div>
-// <Button className="csvBtn">
-//     <span style={{margin: 10}}>Export as CSV</span>
-//     <FaFileCsv />
-// </Button>
-//     </div>
-//     )};
-
-// export default NovoForm;
-
 import React from "react";
 // import React from 'react';
- import {
+import {
      BrowserRouter as Router,
      Routes,
      Route,
      Link,
      NavLink
-   } from 'react-router-dom';
-   import Button from 'react-bootstrap/Button';
-   import Img2 from '../Novo/novo-logo.png';
-   import "bootstrap/dist/css/bootstrap.min.css";
-   import { useTable } from 'react-table';
-   //import Table from 'react-bootstrap/Table';
-   import { FaFileCsv } from "react-icons/fa";
-   import MaterialTable from 'material-table';
-   import tableIcons from '../tableIcons/tableIcons';
-   import HeaderBar from "../NavBar/NBHeader";
-   import axios from 'axios';
-   import  { Component } from 'react';
-   import Article from '../NovoAttempts/NovoAttempts';
-   import { useCookies } from "react-cookie";
-  import {ThemeProvider} from "styled-components";
-  import { GlobalStyles } from "../NovoTheme/GlobalStyles";
-  import { lightTheme, darkTheme } from "../NovoTheme/Theme";
-  import { useState, useEffect } from "react";
-  import  {useDarkMode} from "../NovoTheme/UseDarkMode";
-  import Toggle from "../NovoTheme/Toggler";
-  import './NovoBuy.css';
-
-
+} from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import Img2 from '../Novo/novo-logo.png';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useTable } from 'react-table';
+//import Table from 'react-bootstrap/Table';
+import { FaFileCsv } from "react-icons/fa";
+import MaterialTable from 'material-table';
+import tableIcons from '../tableIcons/tableIcons';
+import HeaderBar from "../NavBar/NBHeader";
+import axios from 'axios';
+import  { Component } from 'react';
+import Article from '../NovoAttempts/NovoAttempts';
+import { useCookies } from "react-cookie";
+import {ThemeProvider} from "styled-components";
+import { GlobalStyles } from "../NovoTheme/GlobalStyles";
+import { lightTheme, darkTheme } from "../NovoTheme/Theme";
+import { useState, useEffect } from "react";
+import  {useDarkMode} from "../NovoTheme/UseDarkMode";
+import Toggle from "../NovoTheme/Toggler";
+import './NovoBuy.css';
    
    const NovoBuy = () => {
     const [cookies, setCookie] = useCookies(['user']);
@@ -132,7 +48,6 @@ import React from "react";
           <Toggle theme={theme} toggleTheme={themeToggler} className='btnToggle'/>
         </div>
         <div className ="completeDiv">
-          
             <div className="NovoTableDiv">
               <MaterialTable
                 className = "NovoTable"
@@ -159,8 +74,7 @@ import React from "react";
               />
         </div>
       <div className='divToggler'>
-    </div> 
-      
+    </div>   
   </div>
 </div>
 </>

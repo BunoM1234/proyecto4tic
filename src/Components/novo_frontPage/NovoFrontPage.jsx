@@ -1,17 +1,17 @@
 import React from 'react';
- import Img2 from '../Novo/novo-logo.png';
- import Button from '@mui/material/Button';
- import DeleteIcon from './1345874.png'
- import {
+import Img2 from '../Novo/novo-logo.png';
+import Button from '@mui/material/Button';
+import DeleteIcon from './1345874.png'
+import {
    BrowserRouter as Router,
    Routes,
    Route,
    Link,
    NavLink
  } from 'react-router-dom';
- import { FaFilter } from "react-icons/fa"
- import {AiFillNotification} from "react-icons/ai"
- import TextField from '@mui/material/TextField';
+import { FaFilter } from "react-icons/fa"
+import {AiFillNotification} from "react-icons/ai"
+import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import HeaderBar from "../NavBar/NBHeader";
 import { Windows } from 'css.gg';
@@ -226,123 +226,119 @@ function App() {
       <>
       <GlobalStyles/>
       <div> 
-      <HeaderBar className="navBar"/>
-        <div className="divToggler">
-          <Toggle theme={theme} toggleTheme={themeToggler} className='btnToggle'/>
-        </div>
-    <div className="completeDiv">
-    <form className="OrderForm" autoComplete="off">
-    <div className="gradient">
-      <div className="form-field">
-      <div className="filterDiv">
-      </div>
-        {serviceList.map((singleService, index) => (
-          <div key={index} className="services" align="center">
-            <div className="first-division">
-            <Autocomplete
-                className='autoCompleteBoard'
-                value={value}
-                onChange={(event, newValue) => {
-                setValue(newValue);
-              }}
-                inputValue={inputValue}
-                onInputChange={(event, newInputValue) => {
-                setInputValue(newInputValue);
-              }}
-                id="controllable-states-demo"
-                options={options}
-                sx={{ width: 300 }}
-                renderInput={(params) => <TextField {...params} label="Board" />}
-              />
-              
-              <Autocomplete 
-               className='autoCompleteBoard'
-               freeSolo
-               value={value2}
-               onChange={(event, newValue2) => {
-               setValue2(newValue2);
-             }}
-               inputValue={inputValue2}
-               onInputChange={(event, newInputValue2) => {
-               setInputValue2(newInputValue2);
-             }}
-               id="controllable-states-demo"
-               options={options}
-               sx={{ width: 300 }}
-               renderInput={(params) => <TextField {...params} label="BOM" />}
-/>
-              <Autocomplete 
-                className='autoCompleteBoard'
-                freeSolo
-                disablePortal
-                id="quantity-autocomplete"
-                options={[
-                  {label: 1},
-                  {label: 2},
-                  {label: 3},
-                  {label: 4},
-                ]}
-                option={{
-                  backgroundColor: '#FFFFFF',
-                }}
-                sx={{ width: 300 }}
-                renderInput={(params) => <TextField {...params} label="Quantity" />}
-/>
-              {serviceList.length !== 1 && (
-                <button
-                  type="button"
-                  id={index}
-                  onClick={(e) => handleServiceRemove(e.target.id)}
-                  class="btn btn-outline-danger"
-                  name="deleteBtn"
-                >
-                  <span>Remove</span>
-                </button>
-              )}
+        <HeaderBar className="navBar"/>
+          <div className="divToggler">
+            <Toggle theme={theme} toggleTheme={themeToggler} className='btnToggle'/>
+          </div>
+          <div className="completeDiv">
+            <form className="OrderForm" autoComplete="off">
+              <div className="gradient">
+                <div className="form-field">
+                  <div className="filterDiv">
+                  </div>
+                  {serviceList.map((singleService, index) => (
+                  <div key={index} className="services" align="center">
+                    <div className="first-division">
+                      <Autocomplete
+                        className='autoCompleteBoard'
+                        value={value}
+                        onChange={(event, newValue) => {
+                        setValue(newValue);
+                        }}
+                        inputValue={inputValue}
+                        onInputChange={(event, newInputValue) => {
+                        setInputValue(newInputValue);
+                        }}
+                        id="controllable-states-demo"
+                        options={options}
+                        sx={{ width: 300 }}
+                        renderInput={(params) => <TextField {...params} label="Board" />}
+                      />  
+                      <Autocomplete 
+                        className='autoCompleteBoard'
+                        freeSolo
+                        value={value2}
+                        onChange={(event, newValue2) => {
+                        setValue2(newValue2);
+                        }}
+                        inputValue={inputValue2}
+                        onInputChange={(event, newInputValue2) => {
+                        setInputValue2(newInputValue2);
+                        }}
+                        id="controllable-states-demo"
+                        options={options}
+                        sx={{ width: 300 }}
+                        renderInput={(params) => <TextField {...params} label="BOM" />}
+                      />
+                      <Autocomplete 
+                        className='autoCompleteBoard'
+                        freeSolo
+                        disablePortal
+                        id="quantity-autocomplete"
+                        options={[
+                          {label: 1},
+                          {label: 2},
+                          {label: 3},
+                          {label: 4},
+                          ]}
+                        option={{
+                          backgroundColor: '#FFFFFF',
+                        }}
+                        sx={{ width: 300 }}
+                        renderInput={(params) => <TextField {...params} label="Quantity" />}
+                      />
+                      {serviceList.length !== 1 && (
+                        <button
+                          type="button"
+                          id={index}
+                          onClick={(e) => handleServiceRemove(e.target.id)}
+                          class="btn btn-outline-danger"
+                          name="deleteBtn"
+                        >
+                          <span>Remove</span>
+                        </button>
+                      )}
+                  </div>
+                  <div className="second-division">
+                    {serviceList.length - 1 === index && serviceList.length < 3 && (
+                      <Button
+                        type="button"
+                        onClick={handleServiceAdd}
+                        className="add-btn"
+                        variant="contained"
+                      >
+                        <span>Add a Service</span>
+                      </Button>
+                    )}
+                </div>
+              </div>
+              ))}
             </div>
-            <div className="second-division">
-              {serviceList.length - 1 === index && serviceList.length < 3 && (
-                <Button
-                  type="button"
-                  onClick={handleServiceAdd}
-                  className="add-btn"
-                  variant="contained"
-                >
-                  <span>Add a Service</span>
-                </Button>
-                
-              )}
+            <div className="makeOrder">
+              <Button
+                color="secondary"
+                variant="contained"
+                className="buyOrder"
+                onClick={handleClick}
+              >
+                <span class="text">Add to buy order</span>
+              </Button>
+              <Snackbar
+                open={open}
+                autoHideDuration={6000}
+                onClose={handleClose}
+                message="Order Created!"
+                action={action}
+              />
             </div>
           </div>
-        ))}
-      </div>
-      <div className="makeOrder">
-      
-        <Button
-          color="secondary"
-          variant="contained"
-          className="buyOrder"
-          onClick={handleClick}
-        >
-          <span class="text">Add to buy order</span>
-          
-        </Button>
-        <Snackbar
-        open={open}
-        autoHideDuration={6000}
-        onClose={handleClose}
-        message="Order Created!"
-        action={action}
-      />
+        </form>
       </div>
     </div>
-    </form>
-    </div>
-    </div>
-    </>
+  </>
         
-    </ThemeProvider>
-  );
+</ThemeProvider>
+);
 }
 
 export default App;

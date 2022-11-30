@@ -16,7 +16,7 @@ import {
 import NovoFrontPage from './Components/novo_frontPage/NovoFrontPage';
 import NovoMain from './Components/NovoMain/NovoMain';
 import NovoBuy from './Components/NovoBuy/NovoBuy';
-import NovoAttempts2 from './Components/NovoAttempts/NovoAttempts';
+import NovoAttempts from './Components/NovoAttempts/NovoAttempts';
 import NovoCookies from './Components/NovoCookies/NovoCookies';
 import { CookiesProvider } from 'react-cookie';
 //import NovoRegister from './Components/Novo_Register/NovoRegister';
@@ -27,14 +27,12 @@ root.render
     <React.StrictMode>
       <CookiesProvider>
         <Router>
-          <Routes>
-            
+          <Routes> 
               <Route path="/" element={<Novoform />} />
               <Route path="/home" element={<NovoFrontPage />} />
               <Route path="/main" element={<NovoMain/>} />
               <Route path="/orders" element={<NovoBuy/>}/>
-              <Route path="/attempts" element={<NovoAttempts2/>} />
-            
+              <Route path="/attempts" element={<NovoAttempts/>} />
           </Routes>
         </Router>
         </CookiesProvider>
